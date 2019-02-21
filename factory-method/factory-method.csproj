@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>factory_method</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.0"/>
+    <PackageReference Include="Oracle.DataAccess.x86" Version="2.112.1"/>
+  </ItemGroup>
+</Project>

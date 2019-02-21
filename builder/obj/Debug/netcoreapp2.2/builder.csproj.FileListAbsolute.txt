@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book\builder\bin\Debug\netcoreapp2.2\builder.deps.json
+C:\Desarrollo\pattern-book\builder\bin\Debug\netcoreapp2.2\builder.runtimeconfig.json
+C:\Desarrollo\pattern-book\builder\bin\Debug\netcoreapp2.2\builder.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book\builder\bin\Debug\netcoreapp2.2\builder.dll
+C:\Desarrollo\pattern-book\builder\bin\Debug\netcoreapp2.2\builder.pdb
+C:\Desarrollo\pattern-book\builder\obj\Debug\netcoreapp2.2\builder.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book\builder\obj\Debug\netcoreapp2.2\builder.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book\builder\obj\Debug\netcoreapp2.2\builder.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book\builder\obj\Debug\netcoreapp2.2\builder.AssemblyInfo.cs
+C:\Desarrollo\pattern-book\builder\obj\Debug\netcoreapp2.2\builder.dll
+C:\Desarrollo\pattern-book\builder\obj\Debug\netcoreapp2.2\builder.pdb

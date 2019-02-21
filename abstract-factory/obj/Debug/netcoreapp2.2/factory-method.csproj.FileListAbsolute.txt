@@ -1,0 +1,12 @@
+C:\Desarrollo\pattern-book\factory-method\bin\Debug\netcoreapp2.2\factory-method.deps.json
+C:\Desarrollo\pattern-book\factory-method\bin\Debug\netcoreapp2.2\factory-method.runtimeconfig.json
+C:\Desarrollo\pattern-book\factory-method\bin\Debug\netcoreapp2.2\factory-method.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book\factory-method\bin\Debug\netcoreapp2.2\factory-method.dll
+C:\Desarrollo\pattern-book\factory-method\bin\Debug\netcoreapp2.2\factory-method.pdb
+C:\Desarrollo\pattern-book\factory-method\obj\Debug\netcoreapp2.2\factory-method.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book\factory-method\obj\Debug\netcoreapp2.2\factory-method.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book\factory-method\obj\Debug\netcoreapp2.2\factory-method.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book\factory-method\obj\Debug\netcoreapp2.2\factory-method.AssemblyInfo.cs
+C:\Desarrollo\pattern-book\factory-method\obj\Debug\netcoreapp2.2\factory-method.dll
+C:\Desarrollo\pattern-book\factory-method\obj\Debug\netcoreapp2.2\factory-method.pdb
+C:\Desarrollo\pattern-book\factory-method\bin\Debug\netcoreapp2.2\factory-method.dll.config
