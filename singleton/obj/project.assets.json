@@ -942,11 +942,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Desarrollo\\pattern-book\\singleton\\singleton.csproj",
+      "projectUniqueName": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\singleton\\singleton.csproj",
       "projectName": "singleton",
-      "projectPath": "c:\\Desarrollo\\pattern-book\\singleton\\singleton.csproj",
+      "projectPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\singleton\\singleton.csproj",
       "packagesPath": "C:\\Users\\Oscar\\.nuget\\packages\\",
-      "outputPath": "c:\\Desarrollo\\pattern-book\\singleton\\obj\\",
+      "outputPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\singleton\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

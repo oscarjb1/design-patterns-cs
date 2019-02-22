@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\bin\Debug\netcoreapp2.2\bridge.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\bin\Debug\netcoreapp2.2\bridge.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\bin\Debug\netcoreapp2.2\bridge.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\bin\Debug\netcoreapp2.2\bridge.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\bin\Debug\netcoreapp2.2\bridge.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\obj\Debug\netcoreapp2.2\bridge.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\obj\Debug\netcoreapp2.2\bridge.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\obj\Debug\netcoreapp2.2\bridge.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\obj\Debug\netcoreapp2.2\bridge.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\obj\Debug\netcoreapp2.2\bridge.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\bridge\obj\Debug\netcoreapp2.2\bridge.pdb

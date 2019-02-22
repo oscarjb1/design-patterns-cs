@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\obj\Debug\netcoreapp2.2\prototype.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\obj\Debug\netcoreapp2.2\prototype.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\obj\Debug\netcoreapp2.2\prototype.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\obj\Debug\netcoreapp2.2\prototype.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\bin\Debug\netcoreapp2.2\prototype.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\bin\Debug\netcoreapp2.2\prototype.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\bin\Debug\netcoreapp2.2\prototype.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\bin\Debug\netcoreapp2.2\prototype.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\bin\Debug\netcoreapp2.2\prototype.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\obj\Debug\netcoreapp2.2\prototype.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\prototype\obj\Debug\netcoreapp2.2\prototype.pdb

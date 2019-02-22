@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\obj\Debug\netcoreapp2.2\adapter.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\obj\Debug\netcoreapp2.2\adapter.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\obj\Debug\netcoreapp2.2\adapter.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\obj\Debug\netcoreapp2.2\adapter.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\bin\Debug\netcoreapp2.2\adapter.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\bin\Debug\netcoreapp2.2\adapter.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\bin\Debug\netcoreapp2.2\adapter.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\bin\Debug\netcoreapp2.2\adapter.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\bin\Debug\netcoreapp2.2\adapter.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\obj\Debug\netcoreapp2.2\adapter.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\adapter\obj\Debug\netcoreapp2.2\adapter.pdb

@@ -1,0 +1,20 @@
+/**
+ * @author Oscar Javier Blancarte Iturralde
+ * @see http://wwww.oscarblancarteblog.com
+ */
+
+namespace oscarblancarte.ipd.adapter.creditapi.bankx{
+    public class XBankCreditResponse {
+        public bool aproval;
+
+        public bool isAproval() {
+            return aproval;
+        }
+
+        public void setAproval(bool aproval) {
+            this.aproval = aproval;
+        }
+    }
+}
+
+
