@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\bin\Debug\netcoreapp2.2\iterator.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\bin\Debug\netcoreapp2.2\iterator.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\bin\Debug\netcoreapp2.2\iterator.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\bin\Debug\netcoreapp2.2\iterator.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\bin\Debug\netcoreapp2.2\iterator.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\obj\Debug\netcoreapp2.2\iterator.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\obj\Debug\netcoreapp2.2\iterator.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\obj\Debug\netcoreapp2.2\iterator.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\obj\Debug\netcoreapp2.2\iterator.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\obj\Debug\netcoreapp2.2\iterator.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\iterator\obj\Debug\netcoreapp2.2\iterator.pdb

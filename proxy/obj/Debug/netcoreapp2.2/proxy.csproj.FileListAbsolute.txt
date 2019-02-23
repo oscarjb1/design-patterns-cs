@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\bin\Debug\netcoreapp2.2\proxy.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\bin\Debug\netcoreapp2.2\proxy.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\bin\Debug\netcoreapp2.2\proxy.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\bin\Debug\netcoreapp2.2\proxy.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\bin\Debug\netcoreapp2.2\proxy.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\obj\Debug\netcoreapp2.2\proxy.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\obj\Debug\netcoreapp2.2\proxy.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\obj\Debug\netcoreapp2.2\proxy.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\obj\Debug\netcoreapp2.2\proxy.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\obj\Debug\netcoreapp2.2\proxy.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\proxy\obj\Debug\netcoreapp2.2\proxy.pdb

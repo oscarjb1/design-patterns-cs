@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\obj\Debug\netcoreapp2.2\flyweight.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\obj\Debug\netcoreapp2.2\flyweight.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\obj\Debug\netcoreapp2.2\flyweight.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\obj\Debug\netcoreapp2.2\flyweight.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\bin\Debug\netcoreapp2.2\flyweight.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\bin\Debug\netcoreapp2.2\flyweight.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\bin\Debug\netcoreapp2.2\flyweight.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\bin\Debug\netcoreapp2.2\flyweight.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\bin\Debug\netcoreapp2.2\flyweight.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\obj\Debug\netcoreapp2.2\flyweight.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\flyweight\obj\Debug\netcoreapp2.2\flyweight.pdb
