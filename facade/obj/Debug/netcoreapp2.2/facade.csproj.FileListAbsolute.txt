@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\obj\Debug\netcoreapp2.2\facade.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\obj\Debug\netcoreapp2.2\facade.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\obj\Debug\netcoreapp2.2\facade.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\obj\Debug\netcoreapp2.2\facade.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\bin\Debug\netcoreapp2.2\facade.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\bin\Debug\netcoreapp2.2\facade.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\bin\Debug\netcoreapp2.2\facade.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\bin\Debug\netcoreapp2.2\facade.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\bin\Debug\netcoreapp2.2\facade.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\obj\Debug\netcoreapp2.2\facade.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\facade\obj\Debug\netcoreapp2.2\facade.pdb

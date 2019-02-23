@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\obj\Debug\netcoreapp2.2\decorator.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\obj\Debug\netcoreapp2.2\decorator.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\obj\Debug\netcoreapp2.2\decorator.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\obj\Debug\netcoreapp2.2\decorator.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\bin\Debug\netcoreapp2.2\decorator.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\bin\Debug\netcoreapp2.2\decorator.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\bin\Debug\netcoreapp2.2\decorator.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\bin\Debug\netcoreapp2.2\decorator.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\bin\Debug\netcoreapp2.2\decorator.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\obj\Debug\netcoreapp2.2\decorator.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\decorator\obj\Debug\netcoreapp2.2\decorator.pdb

@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\bin\Debug\netcoreapp2.2\composite.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\bin\Debug\netcoreapp2.2\composite.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\bin\Debug\netcoreapp2.2\composite.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\bin\Debug\netcoreapp2.2\composite.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\bin\Debug\netcoreapp2.2\composite.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\obj\Debug\netcoreapp2.2\composite.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\obj\Debug\netcoreapp2.2\composite.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\obj\Debug\netcoreapp2.2\composite.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\obj\Debug\netcoreapp2.2\composite.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\obj\Debug\netcoreapp2.2\composite.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\composite\obj\Debug\netcoreapp2.2\composite.pdb
