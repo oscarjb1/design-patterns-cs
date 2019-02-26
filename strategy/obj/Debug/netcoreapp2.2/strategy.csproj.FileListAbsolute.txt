@@ -1,0 +1,12 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\bin\Debug\netcoreapp2.2\strategy.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\bin\Debug\netcoreapp2.2\strategy.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\bin\Debug\netcoreapp2.2\strategy.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\bin\Debug\netcoreapp2.2\strategy.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\bin\Debug\netcoreapp2.2\strategy.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\obj\Debug\netcoreapp2.2\strategy.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\obj\Debug\netcoreapp2.2\strategy.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\obj\Debug\netcoreapp2.2\strategy.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\obj\Debug\netcoreapp2.2\strategy.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\obj\Debug\netcoreapp2.2\strategy.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\obj\Debug\netcoreapp2.2\strategy.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\strategy\bin\Debug\netcoreapp2.2\strategy.dll.config

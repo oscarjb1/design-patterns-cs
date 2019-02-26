@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\bin\Debug\netcoreapp2.2\templete-method.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\bin\Debug\netcoreapp2.2\templete-method.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\bin\Debug\netcoreapp2.2\templete-method.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\bin\Debug\netcoreapp2.2\templete-method.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\bin\Debug\netcoreapp2.2\templete-method.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\obj\Debug\netcoreapp2.2\templete-method.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\obj\Debug\netcoreapp2.2\templete-method.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\obj\Debug\netcoreapp2.2\templete-method.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\obj\Debug\netcoreapp2.2\templete-method.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\obj\Debug\netcoreapp2.2\templete-method.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\templete-method\obj\Debug\netcoreapp2.2\templete-method.pdb

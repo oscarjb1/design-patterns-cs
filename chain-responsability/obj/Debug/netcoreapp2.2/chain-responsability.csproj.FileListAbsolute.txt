@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\bin\Debug\netcoreapp2.2\chain-responsability.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\bin\Debug\netcoreapp2.2\chain-responsability.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\bin\Debug\netcoreapp2.2\chain-responsability.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\bin\Debug\netcoreapp2.2\chain-responsability.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\bin\Debug\netcoreapp2.2\chain-responsability.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\obj\Debug\netcoreapp2.2\chain-responsability.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\obj\Debug\netcoreapp2.2\chain-responsability.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\obj\Debug\netcoreapp2.2\chain-responsability.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\obj\Debug\netcoreapp2.2\chain-responsability.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\obj\Debug\netcoreapp2.2\chain-responsability.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\chain-responsability\obj\Debug\netcoreapp2.2\chain-responsability.pdb

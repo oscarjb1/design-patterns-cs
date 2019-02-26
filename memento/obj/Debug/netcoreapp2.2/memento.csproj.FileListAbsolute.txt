@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\bin\Debug\netcoreapp2.2\memento.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\bin\Debug\netcoreapp2.2\memento.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\bin\Debug\netcoreapp2.2\memento.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\bin\Debug\netcoreapp2.2\memento.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\bin\Debug\netcoreapp2.2\memento.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\obj\Debug\netcoreapp2.2\memento.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\obj\Debug\netcoreapp2.2\memento.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\obj\Debug\netcoreapp2.2\memento.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\obj\Debug\netcoreapp2.2\memento.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\obj\Debug\netcoreapp2.2\memento.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\memento\obj\Debug\netcoreapp2.2\memento.pdb
