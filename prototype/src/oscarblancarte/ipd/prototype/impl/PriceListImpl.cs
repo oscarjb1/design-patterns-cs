@@ -33,16 +33,16 @@ namespace oscarblancarte.ipd.prototype.impl{
             this.products.Add(item);
         }
         
-        public IPrototype clone() {
+        public IPrototype Clone() {
             PriceListImpl clone = new PriceListImpl(listName);
             clone.setProducts(products);
             return clone;
         }
 
-        public IPrototype deepClone() {
+        public IPrototype DeepClone() {
             List<ProductItem> cloneProducts = new List<ProductItem>();
             foreach(ProductItem item in this.products){
-                ProductItem cloneItem = (ProductItem)item.clone();
+                ProductItem cloneItem = (ProductItem)item.Clone();
                 cloneProducts.Add(cloneItem);
             }
             PriceListImpl clone = new PriceListImpl(listName);

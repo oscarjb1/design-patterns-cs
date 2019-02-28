@@ -10,14 +10,14 @@ using oscarblancarte.ipd.prototype.impl;
 
 namespace oscarblancarte.ipd.prototype.impl{
     public class PrototypeFactory {
-        private static Dictionary<string,IPrototype> prototypes = new Dictionary<string, IPrototype>();
+        private static Dictionary<string,IPrototype> Prototypes = new Dictionary<string, IPrototype>();
         
-        public static IPrototype getPrototype(string prototypeName){
-            return prototypes[prototypeName].deepClone();
+        public static IPrototype GetPrototype(string prototypeName){
+            return Prototypes[prototypeName].DeepClone();
         }
         
-        public static void addPrototype(string prototypeName,IPrototype prototype){
-            prototypes.Add(prototypeName, prototype);
+        public static void AddPrototype(string prototypeName,IPrototype prototype){
+            Prototypes.Add(prototypeName, prototype);
         }
     }
 }

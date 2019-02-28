@@ -6,12 +6,12 @@ using System.IO;
 
         private static readonly string COMMAND_NAME = "NOT FOUND";
 
-        public override string getCommandName() {
+        public override string GetCommandName() {
             return COMMAND_NAME;
         }
 
-        public override void execute(string[] args, StreamWriter output) {
-            write(output, "Command not found");
+        public override void Execute(string[] args, StreamWriter output) {
+            Write(output, "Command not found");
         }
     }
 

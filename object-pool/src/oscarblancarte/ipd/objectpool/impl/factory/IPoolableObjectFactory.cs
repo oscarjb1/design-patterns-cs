@@ -6,6 +6,6 @@ using oscarblancarte.ipd.objectpool.impl.poolable;
  */
 namespace oscarblancarte.ipd.objectpool.impl.factory{
     public interface IPoolableObjectFactory<T> {
-        T createNew();
+        T CreateNew();
     }
 } 

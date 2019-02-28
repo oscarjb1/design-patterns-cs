@@ -9,13 +9,13 @@ using System.Threading;
 namespace oscarblancarte.ipd.objectpool.impl.poolable{
     
     public class ExecutorTask : IPooledObject {
-        private int uses;
-        private static int invalidate;
-        private static int counter;
+        private int Uses;
+        private static int Invalidated;
+        private static int Counter;
 
-        public void execute() {
-            int c = ++counter ;
-            uses++;
+        public void Execute() {
+            int c = ++Counter ;
+            Uses++;
             Console.WriteLine("execute ==> " + c);
             try {
                 Thread.Sleep(5000);
@@ -25,13 +25,13 @@ namespace oscarblancarte.ipd.objectpool.impl.poolable{
             Console.WriteLine("execute end ==> " + c);
         }
 
-        public bool validate() {
-            return uses < 2;
+        public bool Validate() {
+            return Uses < 2;
         }
 
         public void Invalidate() {
-            invalidate++;
-            Console.WriteLine("Invalidate Counter ==> " + invalidate);
+            Invalidated++;
+            Console.WriteLine("Invalidate Counter ==> " + Invalidated);
         }
     }
 } 

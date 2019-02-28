@@ -5,7 +5,7 @@
  */
 namespace oscarblancarte.ipd.bridge.encript{
     public interface IEncryptAlgorithm {
-        string encrypt(string message, string password) ;
+        string Encrypt(string message, string password) ;
     }
 
 }

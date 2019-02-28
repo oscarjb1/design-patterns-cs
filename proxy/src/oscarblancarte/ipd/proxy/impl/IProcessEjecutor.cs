@@ -4,7 +4,7 @@
  */
 namespace oscarblancarte.ipd.proxy.impl{
     public interface IProcessEjecutor {
-        void ejecuteProcess(int idProcess, string user, string password);
+        void EjecuteProcess(int idProcess, string user, string password);
     }
 }
 

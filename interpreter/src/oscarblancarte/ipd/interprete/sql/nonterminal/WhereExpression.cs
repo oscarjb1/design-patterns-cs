@@ -8,21 +8,21 @@ using System;
 namespace oscarblancarte.ipd.interprete.sql.nonterminal{
     public class WhereExpression : AbstractSQLExpression {
 
-        private StatementExpression statement;
+        private StatementExpression Statement;
 
-        public WhereExpression(StatementExpression statement) {
-            this.statement = statement;
+        public WhereExpression(StatementExpression Statement) {
+            this.Statement = Statement;
         }
 
-        public Object interpret(Context context)  {
-            context.createRowIterator();
-            while (context.nextRow()) {
-                if (statement == null) {
-                    context.addCurrentRowToResults();
+        public Object Interpret(Context context)  {
+            context.CreateRowIterator();
+            while (context.NextRow()) {
+                if (Statement == null) {
+                    context.AddCurrentRowToResults();
                 } else {
-                    bool result = (bool) statement.interpret(context);
+                    bool result = (bool) Statement.Interpret(context);
                     if (result) {
-                        context.addCurrentRowToResults();
+                        context.AddCurrentRowToResults();
                     }
                 }
             }
@@ -30,8 +30,8 @@ namespace oscarblancarte.ipd.interprete.sql.nonterminal{
         }
 
         public override string ToString() {
-            if (statement != null) {
-                return "\nWHERE " + statement.ToString();
+            if (Statement != null) {
+                return "\nWHERE " + Statement.ToString();
             } else {
                 return "";
             }

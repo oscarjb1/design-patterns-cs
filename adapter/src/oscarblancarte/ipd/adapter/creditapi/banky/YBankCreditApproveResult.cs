@@ -6,16 +6,6 @@
 namespace oscarblancarte.ipd.adapter.creditapi.banky{
     public class YBankCreditApproveResult {
 
-        public string approved;
-
-        public string getApproved() {
-            return approved;
-        }
-
-        public void setApproved(string approved) {
-            this.approved = approved;
-        }
+        public string Approved{get; set;}
     }
 }
-
-

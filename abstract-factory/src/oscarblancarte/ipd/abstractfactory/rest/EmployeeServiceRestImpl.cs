@@ -10,7 +10,7 @@ namespace oscarblancarte.ipd.abstractfactory.rest{
     public class EmployeeServiceRestImpl : IEmployeeService{
         private static readonly string[] EMPLOYEES = new string[]{"Juan","Pedro","Manuel"};
 
-        public string[] getEmployee() {
+        public string[] GetEmployee() {
             Console.WriteLine("RestFul");
             return EMPLOYEES;
         }

@@ -7,21 +7,15 @@ namespace oscarblancarte.ipd.mediator.module.impl.dto
     public class Sale
     {
 
-        protected List<Product> productos = new List<Product>();
+        public List<Product> Productos{get; set;}
 
-        public List<Product> getProductos()
-        {
-            return productos;
+        public Sale(){
+            Productos = new List<Product>();
         }
 
         public void addProduct(Product product)
         {
-            this.productos.Add(product);
-        }
-
-        public void setProductos(List<Product> productos)
-        {
-            this.productos = productos;
+            this.Productos.Add(product);
         }
 
     }

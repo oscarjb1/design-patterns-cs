@@ -8,7 +8,7 @@ using System;
 
 namespace oscarblancarte.ipd.singleton.util{
     public class PropertiesUtil {
-        public static NameValueCollection loadProperty(){
+        public static NameValueCollection LoadProperty(){
             try {
                 NameValueCollection props = ConfigurationManager.AppSettings;
                 return props;

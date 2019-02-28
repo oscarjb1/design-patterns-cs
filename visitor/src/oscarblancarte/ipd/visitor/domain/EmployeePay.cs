@@ -1,28 +1,15 @@
 namespace oscarblancarte.ipd.visitor.domain{
     public class EmployeePay {
 
-        public string employeeName;
-        public double totalPay;
+        public string EmployeeName{get; set;}
+        public double TotalPay{get; set;}
 
-        public EmployeePay(string employeeName, double totalPay) {
-            this.employeeName = employeeName;
-            this.totalPay = totalPay;
+        public EmployeePay(string EmployeeName, double TotalPay) {
+            this.EmployeeName = EmployeeName;
+            this.TotalPay = TotalPay;
         }
 
-        public string getEmployeeName() {
-            return employeeName;
-        }
-
-        public void setEmployeeName(string employeeName) {
-            this.employeeName = employeeName;
-        }
-
-        public double getTotalPay() {
-            return totalPay;
-        }
-
-        public void setTotalPay(double totalPay) {
-            this.totalPay = totalPay;
-        }
+        
+        
     }
 }

@@ -17,7 +17,7 @@ namespace oscarblancarte.ipd.visitor.domain{
 
 
         public void accept(IVisitor visitor) {
-            visitor.project(this);
+            visitor.Project(this);
         }
 
         public List<Activitie> GetActivities() {

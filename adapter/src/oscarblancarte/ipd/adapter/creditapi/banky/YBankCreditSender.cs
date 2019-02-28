@@ -15,10 +15,10 @@ namespace oscarblancarte.ipd.adapter.creditapi.banky{
         public void StartThread(){
             Console.WriteLine("yBank received your request in a moment you will have the answer, be patient please");
             YBankCreditApproveResult response = new YBankCreditApproveResult();
-            if (request.getCredit() <= 1500) {
-                response.setApproved("Y");
+            if (request.Credit <= 1500) {
+                response.Approved = "Y";
             } else {
-                response.setApproved("N");
+                response.Approved = "N";
             }
             try {
                 Thread.Sleep(1000 * 30);

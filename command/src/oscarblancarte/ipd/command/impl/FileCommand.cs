@@ -12,9 +12,9 @@ namespace oscarblancarte.ipd.command.impl{
         private static readonly string RENAME_FILE = "-R";
         private static readonly string DELETE_FILE = "-D";
 
-        public override void execute(string[] args, StreamWriter output) {
+        public override void Execute(string[] args, StreamWriter output) {
             if (args.Length < 2) {
-                write(output, "Insufficient parameters");
+                Write(output, "Insufficient parameters");
                 return;
             }
 
@@ -26,21 +26,21 @@ namespace oscarblancarte.ipd.command.impl{
             Array.Copy(args, 1, reduce, 0, args.Length);
             
             if (WRITE_APPEND.Equals(operation)) {
-                write(output, writeAppend(reduce));
+                Write(output, WriteAppend(reduce));
             } else if (WRITE_NEW.Equals(operation)) {
-                write(output, writeNew(reduce));
+                Write(output, WriteNew(reduce));
             } else if (WRITE_OVERRIDE.Equals(operation)) {
-                write(output, writeOverride(reduce));
+                Write(output, WriteOverride(reduce));
             } else if (RENAME_FILE.Equals(operation)) {
-                write(output, renameFile(reduce));
+                Write(output, RenameFile(reduce));
             } else if (DELETE_FILE.Equals(operation)) {
-                write(output, deleteFile(reduce));
+                Write(output, DeleteFile(reduce));
             } else {
-                write(output, "Invalid operation {" + WRITE_APPEND + "|" + WRITE_NEW + "|" + WRITE_OVERRIDE + "|" + RENAME_FILE + "|DELETE_FILE}");
+                Write(output, "Invalid operation {" + WRITE_APPEND + "|" + WRITE_NEW + "|" + WRITE_OVERRIDE + "|" + RENAME_FILE + "|DELETE_FILE}");
             }
         }
 
-        private string renameFile(string[] args) {
+        private string RenameFile(string[] args) {
             string filePath = args[0];
             string newFileName = args[1];
             try {
@@ -51,7 +51,7 @@ namespace oscarblancarte.ipd.command.impl{
             }
         }
 
-        private string writeOverride(string[] args) {
+        private string WriteOverride(string[] args) {
             string filePath = args[0];
             string fileContent = args[1];
 
@@ -70,7 +70,7 @@ namespace oscarblancarte.ipd.command.impl{
             }
         }
 
-        private String writeAppend(String[] args) {
+        private String WriteAppend(String[] args) {
             String filePath = args[0];
             String fileContent = args[1];
 
@@ -91,7 +91,7 @@ namespace oscarblancarte.ipd.command.impl{
             }
         }
 
-        private String writeNew(String[] args) {
+        private String WriteNew(String[] args) {
             if(args.Length<2){
                 return "Invalid arguments";
             }
@@ -114,7 +114,7 @@ namespace oscarblancarte.ipd.command.impl{
             }
         }
 
-        private String deleteFile(String[] args) {
+        private String DeleteFile(String[] args) {
             String filePath = args[0];
             try{
                 File.Delete(filePath);
@@ -126,7 +126,7 @@ namespace oscarblancarte.ipd.command.impl{
             return "";
         }
 
-        public override String getCommandName() {
+        public override String GetCommandName() {
             return COMMAND_NAME;
         }
     }

@@ -17,27 +17,27 @@ using System.Globalization;
 namespace oscarblancarte.ipd.interprete.sql.nonterminal{
     public class BooleanExpression : StatementExpression {
 
-        private readonly LiteralExpression leftExpression;
-        private readonly LiteralExpression booleanOperator;
-        private readonly LiteralExpression rightExpression;
+        private readonly LiteralExpression LeftExpression;
+        private readonly LiteralExpression BooleanOperator;
+        private readonly LiteralExpression RightExpression;
 
         public BooleanExpression(LiteralExpression leftExp, LiteralExpression operators, LiteralExpression rightExp) {
-            this.leftExpression = leftExp;
-            this.booleanOperator = operators;
-            this.rightExpression = rightExp;
+            this.LeftExpression = leftExp;
+            this.BooleanOperator = operators;
+            this.RightExpression = rightExp;
         }
 
-        public Object interpret(Context context)  {
-            IRow currentRow = context.getCurrentRow();
+        public Object Interpret(Context context)  {
+            IRow currentRow = context.GetCurrentRow();
 
-            String left = leftExpression.interpret(context).ToString();
-            String opr = booleanOperator.interpret(context).ToString();
-            Object right = rightExpression.interpret(context);
+            String left = LeftExpression.Interpret(context).ToString();
+            String opr = BooleanOperator.Interpret(context).ToString();
+            Object right = RightExpression.Interpret(context);
 
-            int columnIndex = context.columnIndex(left);
+            int columnIndex = context.ColumnIndex(left);
             ICell cell = currentRow.GetCell(columnIndex);
 
-            if (rightExpression.GetType() == typeof(NumericExpression)) {
+            if (RightExpression.GetType() == typeof(NumericExpression)) {
                 cell.SetCellType(CellType.Numeric);
                 double cellValue = cell.NumericCellValue;
                 double rightVal = ((Int64) right);
@@ -56,13 +56,13 @@ namespace oscarblancarte.ipd.interprete.sql.nonterminal{
                 } else {
                     throw new SystemException("Unexpected operator '" + opr + "'");
                 }
-            } else if (rightExpression.GetType() == typeof(DateExpression)) {
+            } else if (RightExpression.GetType() == typeof(DateExpression)) {
                 cell.SetCellType(CellType.String);
                 String cellValue = cell.StringCellValue;
                 long cellDateLong = 0;
                 long expressionDateLong = ((DateTime) right).Ticks;
                 try {
-                    DateTime date = DateTime.ParseExact(cellValue, context.getDateFormat(),CultureInfo.InvariantCulture);
+                    DateTime date = DateTime.ParseExact(cellValue, context.GetDateFormat(),CultureInfo.InvariantCulture);
                     cellDateLong = date.Ticks;
                 } catch (Exception e) {
                     throw new InterpreteException("Invalid date > " + cellValue + ", " + e.ToString());
@@ -82,7 +82,7 @@ namespace oscarblancarte.ipd.interprete.sql.nonterminal{
                 } else {
                     throw new SystemException("Unexpected operator '" + opr + "'");
                 }
-            } else if ( (rightExpression.GetType() == typeof(LiteralExpression)) || (rightExpression.GetType() == typeof(TextExpression))) {
+            } else if ( (RightExpression.GetType() == typeof(LiteralExpression)) || (RightExpression.GetType() == typeof(TextExpression))) {
                 cell.SetCellType(CellType.String);
                 string cellValue = cell.StringCellValue;
                 string rightVal = right.ToString();
@@ -111,7 +111,7 @@ namespace oscarblancarte.ipd.interprete.sql.nonterminal{
         }
 
         public override string ToString() {
-            return leftExpression.ToString() + " " + booleanOperator.ToString() + " " + rightExpression.ToString();
+            return LeftExpression.ToString() + " " + BooleanOperator.ToString() + " " + RightExpression.ToString();
         }
 
         

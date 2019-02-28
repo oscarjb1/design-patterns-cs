@@ -15,25 +15,25 @@ using NPOI.SS.UserModel;
 namespace oscarblancarte.ipd.interprete.sql.nonterminal{
     public class TargetExpression : AbstractSQLExpression {
 
-    private List<LiteralExpression> targets = new List<LiteralExpression>();
+    private List<LiteralExpression> Targets = new List<LiteralExpression>();
 
     public TargetExpression(params LiteralExpression[] expressions) {
         //this.targets = Arrays.asList(expressions);
-        targets = expressions.OfType<LiteralExpression>().ToList(); // this isn't going to be fast.
+        Targets = expressions.OfType<LiteralExpression>().ToList(); // this isn't going to be fast.
     }
 
-    public Object interpret(Context context) {
-        context.createResultArray(targets.Count);
+    public Object Interpret(Context context) {
+        context.CreateResultArray(Targets.Count);
 
-        List<IRow> resultRow = context.getResultRow();
+        List<IRow> resultRow = context.GetResultRow();
         foreach (IRow row in resultRow) {
-            Object[] result = context.createRow();
+            Object[] result = context.CreateRow();
             int col = 0;
             
-            foreach (LiteralExpression literalExpression in targets) {
-                string column = literalExpression.interpret(context).ToString();
-                context.tableColumn(column);
-                int columnIndex = context.columnIndex(column);
+            foreach (LiteralExpression literalExpression in Targets) {
+                string column = literalExpression.Interpret(context).ToString();
+                context.TableColumn(column);
+                int columnIndex = context.ColumnIndex(column);
                 ICell cell = row.GetCell(columnIndex);
                 cell.SetCellType(CellType.String);
                 string value = cell.StringCellValue;
@@ -45,7 +45,7 @@ namespace oscarblancarte.ipd.interprete.sql.nonterminal{
 
     public override string ToString() {
         string output = "";
-        foreach (LiteralExpression literalExpression in targets) {
+        foreach (LiteralExpression literalExpression in Targets) {
             output += ", " + literalExpression.ToString();
         }
         Console.WriteLine("outpu > " + output);

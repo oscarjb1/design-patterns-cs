@@ -6,14 +6,14 @@ using oscarblancarte.ipd.bridge.encript;
  */
 namespace oscarblancarte.ipd.bridge.impl{
     public class DefaultMessageEncryptImpl : IMessageEncrypt{
-        private IEncryptAlgorithm encryptAlgorith;
+        private IEncryptAlgorithm EncryptAlgorith;
         
         public DefaultMessageEncryptImpl(IEncryptAlgorithm encryptAlgorith){
-            this.encryptAlgorith = encryptAlgorith;
+            this.EncryptAlgorith = encryptAlgorith;
         }
         
-        public string encryptMessage(string message, string password) {
-            return encryptAlgorith.encrypt(message, password);
+        public string EncryptMessage(string message, string password) {
+            return EncryptAlgorith.Encrypt(message, password);
         }
     }
 }

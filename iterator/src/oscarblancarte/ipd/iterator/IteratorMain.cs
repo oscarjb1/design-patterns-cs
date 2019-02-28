@@ -24,9 +24,9 @@ namespace oscarblancarte.ipd.iterator{
                         );
 
 
-                        IIterator<Employee> empIterator = employee.createIterator();
-                        while (empIterator.hasNext()) {
-                                Employee emp = empIterator.next();
+                        IIterator<Employee> empIterator = employee.CreateIterator();
+                        while (empIterator.HasNext()) {
+                                Employee emp = empIterator.Next();
                                 Console.WriteLine("emp > " + emp.ToString());
                         }
                 }

@@ -8,10 +8,10 @@ using System;
 namespace oscarblancarte.ipd.observer.impl.observers{
     public class DateFormatObserver : IObserver{
 
-        public void notifyObserver(string command, Object source) {
+        public void NotifyObserver(string command, Object source) {
             if(command.Equals("defaultDateFormat")){
                 ConfigurationManager conf = (ConfigurationManager)source;
-                Console.WriteLine("Observer ==> DateFormatObserver.dateFormatChange > " + DateTime.Now.ToString(conf.getDefaultDateFormat()) );
+                Console.WriteLine("Observer ==> DateFormatObserver.dateFormatChange > " + DateTime.Now.ToString(conf.GetDefaultDateFormat()) );
             }
         }   
     }

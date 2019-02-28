@@ -9,20 +9,20 @@ using oscarblancarte.ipd.chainofresponsability.domain.order;
 namespace oscarblancarte.ipd.chainofresponsability.validator{
     public class OrderItemValidator : AbstractOrderValidator {
 
-        public override void validate(AbstractOrder order)  {
-            List<OrderItem> orderItems = order.getOrderItems();
+        public override void Validate(AbstractOrder order)  {
+            List<OrderItem> orderItems = order.OrderItems;
             foreach (OrderItem item in orderItems) {
-                Product product = item.getProduct();
-                if (item.getQuantity() <= 0) {
-                    throw new ValidationException("The product '" + product.getName() + "' has no amount");
+                Product product = item.Product;
+                if (item.Quantity <= 0) {
+                    throw new ValidationException("The product '" + product.Name + "' has no amount");
                 } 
                 
-                double listPrice = item.getProduct().getListPrice();
-                double price = item.getPrice();
+                double listPrice = item.Product.ListPrice;
+                double price = item.Price;
                 double priceLimit = listPrice - (listPrice*0.20d);
                 if(price < priceLimit){
                     throw new ValidationException("The price of the product '"+
-                            product.getName()+"' exceeds the allowed limit");
+                            product.Name+"' exceeds the allowed limit");
                 }
             }
         }

@@ -8,18 +8,18 @@ using System;
 namespace oscarblancarte.ipd.interprete.sql.terminal{
     public class NumericExpression : LiteralExpression{
         
-        private readonly Int64 number;
+        private readonly Int64 Number;
         
-        public NumericExpression(Int64 num): base(null){
-            this.number = num;
+        public NumericExpression(Int64 Number): base(null){
+            this.Number = Number;
         }
 
-        public override Object interpret(Context context) {
-            return number;
+        public override Object Interpret(Context context) {
+            return Number;
         }
 
         public override string ToString() {
-            return number.ToString();
+            return Number.ToString();
         }
         
     }

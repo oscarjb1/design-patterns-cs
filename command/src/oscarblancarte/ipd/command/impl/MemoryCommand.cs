@@ -7,14 +7,14 @@ namespace oscarblancarte.ipd.command.impl{
 
         public static readonly string COMMAN_NAME = "memory";
 
-        public override string getCommandName() {
+        public override string GetCommandName() {
             return COMMAN_NAME;
         }
 
-        public override void execute(string[] args, StreamWriter output) {
+        public override void Execute(string[] args, StreamWriter output) {
             double totalMemory = GC.GetTotalMemory(true); // 1000000d;
             string salida = "totalMemory: " + totalMemory;
-            write(output, salida);
+            Write(output, salida);
         }
 
     }

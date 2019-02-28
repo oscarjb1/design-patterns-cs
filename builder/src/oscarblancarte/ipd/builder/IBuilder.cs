@@ -4,7 +4,7 @@
 
 namespace oscarblancarte.ipd.builder{
     public interface IBuilder<T> {
-        T build();
+        T Build();
     }
 }
 

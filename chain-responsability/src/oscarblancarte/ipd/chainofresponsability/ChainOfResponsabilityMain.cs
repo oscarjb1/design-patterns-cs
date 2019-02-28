@@ -13,48 +13,48 @@ namespace oscarblancarte.ipd.chainofresponsability{
 
         static void Main(string[] args) {
             SalesOrder salesOrder = new SalesOrder();
-            salesOrder.setDeliveryDate(DateTime.Now);
+            salesOrder.DeliveryDate = DateTime.Now;
             Customer customer = new Customer();
-            customer.setName("Oscar Blancarte");
-            customer.setRfc("XXX0000000X0");
-            customer.setStatus(Status.ACTIVO);
+            customer.Name = "Oscar Blancarte";
+            customer.Rfc = "XXX0000000X0";
+            customer.Status = Status.ACTIVO;
 
             Telephone phone = new Telephone();
-            phone.setExt("123");
-            phone.setLada("999");
-            phone.setNumber("1234567");
-            customer.setTelephone(phone);
+            phone.Ext = "123";
+            phone.Lada = "999";
+            phone.Number = "1234567";
+            customer.Telephone = phone;
 
             Address address = new Address();
-            address.setAddress1("Address 1");
-            address.setAddress2("Address 2");
-            address.setCP("1234");
-            address.setCountry("Mexico");
-            customer.setAddress(address);
+            address.Address1 = "Address 1";
+            address.Address2 = "Address 2";
+            address.CP = "1234";
+            address.Country = "Mexico";
+            customer.Address = address;
 
             CreditData creditData = new CreditData();
-            creditData.setBalance(1000);
-            creditData.setCreditLimit(13000);
-            customer.setCreditData(creditData);
+            creditData.Balance = 1000;
+            creditData.CreditLimit = 13000;
+            customer.CreditData = creditData;
 
-            salesOrder.setContributor(customer);
+            salesOrder.Contributor = customer;
 
             List<OrderItem> orderItems = new List<OrderItem>();
             for (int c = 0; c < 10; c++) {
                 OrderItem item = new OrderItem();
-                item.setPrice((c + 1) * 30);
+                item.Price = (c + 1) * 30;
                 Product product = new Product();
-                product.setListPrice((c + 1) * 32);
-                product.setName("Product " + (c + 1));
-                item.setProduct(product);
-                item.setQuantity(1);
+                product.ListPrice = (c + 1) * 32;
+                product.Name = "Product " + (c + 1);
+                item.Product = product;
+                item.Quantity = 1;
                 orderItems.Add(item);
             }
-            salesOrder.setOrderItems(orderItems);
+            salesOrder.OrderItems  = orderItems;
             Console.WriteLine("Total orden > " + salesOrder.getTotal());
             try {
-                AbstractOrderValidator validator = OrderValidatorBuilder.buildSalesOrderValidator();
-                validator.validate(salesOrder);
+                AbstractOrderValidator validator = OrderValidatorBuilder.BuildSalesOrderValidator();
+                validator.Validate(salesOrder);
                 Console.WriteLine("Successful validation");
             } catch (Exception e) {
                 Console.WriteLine(e.ToString());

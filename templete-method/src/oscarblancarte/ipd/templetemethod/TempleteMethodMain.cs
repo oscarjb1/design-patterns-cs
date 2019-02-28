@@ -16,10 +16,10 @@ namespace oscarblancarte.ipd.templetemethod{
         private static readonly string PROCESS_DIR = "C:/files/process";
 
         static void Main(string[] args) {
-            new TempleteMethodMain().start();
+            new TempleteMethodMain().Start();
         }
 
-        public void start() {
+        public void Start() {
             try {
                 //Timer timer = new Timer();
                 //timer.schedule(this, DateTime.Now, (long) 1000 * 10);
@@ -49,7 +49,7 @@ namespace oscarblancarte.ipd.templetemethod{
                 try {
                     Console.WriteLine("> File found > " + file);
                     FileInfo fileInfo = new FileInfo(file);
-                    new DrugstoreFileProcess(fileInfo,LOG_DIR,PROCESS_DIR).execute();
+                    new DrugstoreFileProcess(fileInfo,LOG_DIR,PROCESS_DIR).Execute();
                     Console.WriteLine("Processed file > " + file);
                 } catch (Exception e) {
                     Console.WriteLine(e.ToString());
@@ -66,7 +66,7 @@ namespace oscarblancarte.ipd.templetemethod{
                 try {
                     Console.WriteLine("> File found > " + file);
                     FileInfo fileInfo = new FileInfo(file);
-                    new GroceryFileProcess(fileInfo,LOG_DIR,PROCESS_DIR).execute();
+                    new GroceryFileProcess(fileInfo,LOG_DIR,PROCESS_DIR).Execute();
                     Console.WriteLine("Processed file > " + file);
                 } catch (Exception e) {
                     Console.WriteLine(e.ToString());

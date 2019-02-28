@@ -4,6 +4,6 @@
  */
 namespace oscarblancarte.ipd.bridge.impl{
     public interface IMessageEncrypt {
-        string encryptMessage(string message, string password);
+        string EncryptMessage(string message, string password);
     }
 }

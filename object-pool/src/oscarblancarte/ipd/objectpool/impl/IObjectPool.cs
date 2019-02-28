@@ -8,7 +8,7 @@ namespace oscarblancarte.ipd.objectpool.impl{
     public interface IObjectPool<T> 
         where T: IPooledObject
     {
-        T getObject() ;
-        void releaceObject(T pooledObject);
+        T GetObject() ;
+        void ReleaceObject(T pooledObject);
     }
 } 

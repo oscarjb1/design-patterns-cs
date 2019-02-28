@@ -11,10 +11,10 @@ namespace oscarblancarte.ipd.strategy.impl.providers{
 
 public class OnMemoryAuthenticationProvider : IAuthenticationStrategy{
 
-    public Principal authenticate(string userName, string passwrd) {
-        User user = OnMemoryDataBase.findUserByName(userName);
-        if(user!=null && user.getPassword().Equals(passwrd)){
-            return new Principal(user.getUserName(), user.getRol());
+    public Principal Authenticate(string userName, string passwrd) {
+        User user = OnMemoryDataBase.FindUserByName(userName);
+        if(user!=null && user.Password.Equals(passwrd)){
+            return new Principal(user.UserName, user.Rol);
         }
         return null;
     }

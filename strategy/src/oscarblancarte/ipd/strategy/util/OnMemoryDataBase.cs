@@ -15,7 +15,7 @@ namespace oscarblancarte.ipd.strategy.util{
             USER_MAP.Add("lcastro",new User("lcastro", "2345", "Supervisor"));
         }
 
-        public static User findUserByName(string name){
+        public static User FindUserByName(string name){
             if(USER_MAP.ContainsKey(name)){
                 return USER_MAP[name];
             }

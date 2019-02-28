@@ -5,7 +5,7 @@
 namespace oscarblancarte.ipd.proxy.impl{
     public class ServiceFactory {
         
-        public static IProcessEjecutor createProcessEjecutor(){
+        public static IProcessEjecutor CreateProcessEjecutor(){
             return new ProcessEjecutorProxy();
         }
     }

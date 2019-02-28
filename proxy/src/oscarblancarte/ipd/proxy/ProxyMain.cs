@@ -12,9 +12,9 @@ namespace oscarblancarte.ipd.proxy{
             string user = "oblancarte";
             string password = "1234";
             int process = 1;
-            IProcessEjecutor processEjecutor = ServiceFactory.createProcessEjecutor();
+            IProcessEjecutor processEjecutor = ServiceFactory.CreateProcessEjecutor();
             try {
-                processEjecutor.ejecuteProcess(process, user, password);
+                processEjecutor.EjecuteProcess(process, user, password);
             } catch (Exception e) {
                 Console.WriteLine(e.ToString());
             }

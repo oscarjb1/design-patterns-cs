@@ -7,7 +7,7 @@ using System;
 namespace oscarblancarte.ipd.observer.impl{
     public interface IObserver {
         
-        void notifyObserver(string command, Object source);
+        void NotifyObserver(string command, Object source);
     }
 }
 

@@ -8,7 +8,7 @@ using System.Windows;
 namespace oscarblancarte.ipd.memento.gui{
 
     public class EmployeeGUI : Form {
-        Employee employee = new Employee();
+        private Employee Employee = new Employee();
         private EmployeeCaretaker caretaker = new EmployeeCaretaker();
         
         public EmployeeGUI() {
@@ -67,10 +67,10 @@ namespace oscarblancarte.ipd.memento.gui{
         }
 
         private void save(EventArgs evt) {
-            employee.setName(nameTxt.Text);
-            employee.setLastName(lastNameTxt.Text);
-            employee.setEmployeeNumber(empNumberTxt.Text);
-            caretaker.addNewMemento(employee.createMemento());
+            Employee.Name = nameTxt.Text;
+            Employee.LastName = lastNameTxt.Text;
+            Employee.EmployeeNumber = empNumberTxt.Text;
+            caretaker.addNewMemento(Employee.createMemento());
 
             MessageBox.Show("OK","Saved state") ;
         }
@@ -83,7 +83,7 @@ namespace oscarblancarte.ipd.memento.gui{
                 MessageBox.Show("Previous","There are no more states") ;
                 return;
             }
-            employee.restoreMemento(menento);
+            Employee.restoreMemento(menento);
             updateModel();
         }
 
@@ -93,14 +93,14 @@ namespace oscarblancarte.ipd.memento.gui{
                 MessageBox.Show("Next","There are no more states") ;
                 return;
             }
-            employee.restoreMemento(memento);
+            Employee.restoreMemento(memento);
             updateModel();
         }
 
         private void updateModel(){
-            nameTxt.Text = employee.getName();
-            lastNameTxt.Text = employee.getLastName();
-            empNumberTxt.Text = employee.getEmployeeNumber();
+            nameTxt.Text = Employee.Name;
+            lastNameTxt.Text = Employee.LastName;
+            empNumberTxt.Text = Employee.EmployeeNumber;
         }
         
         private TextBox empNumberTxt;

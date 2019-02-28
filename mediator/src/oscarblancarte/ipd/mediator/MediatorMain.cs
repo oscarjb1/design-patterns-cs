@@ -6,13 +6,13 @@ namespace oscarblancarte.ipd.mediator{
     public class MediatorMain {
 
         static void Main(string[] args) {
-            new CRMModule().activate();
-            new NotifyModule().activate();
-            new StockModule().activate();
-            new PurchaseModule().activate();
+            new CRMModule().Activate();
+            new NotifyModule().Activate();
+            new StockModule().Activate();
+            new PurchaseModule().Activate();
             
             ECommerceModule client = new ECommerceModule();
-            client.activate();
+            client.Activate();
             
             Sale sale = new Sale();
             for(int c=0;c<5;c++){

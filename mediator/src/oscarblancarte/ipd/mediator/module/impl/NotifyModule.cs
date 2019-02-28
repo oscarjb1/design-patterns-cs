@@ -7,20 +7,20 @@ namespace oscarblancarte.ipd.mediator.module.impl{
         public static readonly string MODULE_NAME = "Notification";
         public const string OPERATION_NOTIFY = "Notify";
 
-        public override string getModulName() {
+        public override string GetModulName() {
             return MODULE_NAME;
         }
 
-        public override Object notifyMessage(ModuleMessage message) {
-            switch (message.getMessageType()) {
+        public override Object NotifyMessage(ModuleMessage message) {
+            switch (message.MessageType) {
                 case OPERATION_NOTIFY:
-                    return notify(message);
+                    return Notify(message);
                 default:
-                    throw new SystemException("Operation not supported '" + message.getMessageType() + "'");
+                    throw new SystemException("Operation not supported '" + message.MessageType + "'");
             }
         }
 
-        private Object notify(ModuleMessage message) {
+        private Object Notify(ModuleMessage message) {
             Console.WriteLine("Notification sent");
             return null;
         }

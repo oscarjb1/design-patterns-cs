@@ -5,7 +5,7 @@
 namespace oscarblancarte.ipd.iterator.impl{
 
     public interface IContainer<T> {
-        IIterator<T> createIterator();
+        IIterator<T> CreateIterator();
     }
 }
 

@@ -10,32 +10,32 @@ namespace oscarblancarte.ipd.command.impl{
 
         public static readonly string COMMAND_NAME = "batch";
 
-        public override string getCommandName() {
+        public override string GetCommandName() {
             return COMMAND_NAME;
         }
 
-        public override void execute(string[] args, StreamWriter output) {
+        public override void Execute(string[] args, StreamWriter output) {
 
             if (args == null || args.Length < 1) {
-                write(output, "Insufficient arguments");
+                Write(output, "Insufficient arguments");
                 return;
             }
 
-            CommandManager manager = CommandManager.getIntance();
-            string[] lines = readLinesFromFile(args[0]);
+            CommandManager manager = CommandManager.GetIntance();
+            string[] lines = ReadLinesFromFile(args[0]);
             foreach (string line in lines) {
-                string[] argsCommand = CommandUtil.tokenizerArgs(line);
-                ICommand command = manager.getCommand(argsCommand[0]);
+                string[] argsCommand = CommandUtil.TokenizerArgs(line);
+                ICommand command = manager.GetCommand(argsCommand[0]);
 
                 string[] reduce = new string[argsCommand.Length-1];
                 Array.Copy(argsCommand, 1, reduce, 0, argsCommand.Length);
-                command.execute(reduce, output);
-                write(output, "\n");
+                command.Execute(reduce, output);
+                Write(output, "\n");
             }
-            write(output, "Batch executed");
+            Write(output, "Batch executed");
         }
 
-        private string[] readLinesFromFile(string filePath)  {
+        private string[] ReadLinesFromFile(string filePath)  {
             try {
                 if (!File.Exists(filePath)) {
                     throw new SystemException("File not Found");

@@ -10,21 +10,21 @@ namespace oscarblancarte.ipd.interprete.sql.terminal
     public class LiteralExpression
     {
 
-        protected string literal;
+        protected string Literal;
 
-        public LiteralExpression(string literal)
+        public LiteralExpression(string Literal)
         {
-            this.literal = literal;
+            this.Literal = Literal;
         }
 
-        public virtual Object interpret(Context context)
+        public virtual Object Interpret(Context context)
         {
-            return literal;
+            return Literal;
         }
 
         public override string ToString()
         {
-            return literal;
+            return Literal;
         }
     }
 

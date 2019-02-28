@@ -8,9 +8,9 @@ namespace oscarblancarte.ipd.command.impl{
 
         public static readonly string COMMAND_NAME = "waithello";
 
-        public override void executeOnBackground(string[] args, StreamWriter output) {
+        public override void ExecuteOnBackground(string[] args, StreamWriter output) {
             if (args == null || args.Length < 1) {
-                write(output, "Insufficient parameters");
+                Write(output, "Insufficient parameters");
                 return;
             }
 
@@ -18,19 +18,19 @@ namespace oscarblancarte.ipd.command.impl{
             try {
                 time = int.Parse(args[0]);
             } catch (Exception e) {
-                write(output, "Invalid time");
+                Write(output, "Invalid time");
                 return;
             }
 
             try {
                 Thread.Sleep(time);
-                write(output, "Hello!!");
+                Write(output, "Hello!!");
             } catch (Exception e) {
                 Console.WriteLine(e.ToString());
             }
         }
 
-        public override string getCommandName() {
+        public override string GetCommandName() {
             return COMMAND_NAME;
         }
 

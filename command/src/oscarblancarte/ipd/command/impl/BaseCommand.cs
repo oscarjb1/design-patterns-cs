@@ -6,11 +6,11 @@ namespace oscarblancarte.ipd.command.impl{
 
     public abstract class BaseCommand : ICommand {
 
-        public abstract string getCommandName();
+        public abstract string GetCommandName();
 
-        public abstract void execute(string[] args, StreamWriter output);
+        public abstract void Execute(string[] args, StreamWriter output);
 
-        public void write(StreamWriter output, string message) {
+        public void Write(StreamWriter output, string message) {
             try {
                 output.Write(message);
                 output.Flush();

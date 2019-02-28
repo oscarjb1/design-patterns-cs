@@ -1,19 +1,23 @@
-using java.io.InputStream;
-using java.util.Properties;
+using System.IO;
+using System.Collections.Generic;
+using Authlete.Util;
+using System;
 
 /**
  * @author oblancarte
  */
 namespace oscarblancarte.ipd.factorymethod.util{
     public class PropertiesUtil {
-        public static Properties loadProperty(String propertiesURL){
+        public static IDictionary<string,string> LoadProperty(string propertiesURL){
             try {
-                Properties properties = new Properties();
-                InputStream inputStream = PropertiesUtil.class.getClassLoader().getResourceAsStream(propertiesURL);
-                properties.load(inputStream);
-                return properties;
+                IDictionary<string, string> prop = null;
+                using (TextReader reader = new StreamReader(propertiesURL))
+                {
+                    prop = PropertiesLoader.Load(reader);
+                }
+                return prop;
             } catch (Exception e) {
-                e.printStackTrace();
+                Console.WriteLine(e.ToString());
                 return null;
             }
         }

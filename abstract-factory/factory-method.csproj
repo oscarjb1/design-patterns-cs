@@ -5,6 +5,6 @@
     <RootNamespace>factory_method</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0"/>
+    <PackageReference Include="Authlete.Authlete" Version="1.2.0"/>
   </ItemGroup>
 </Project>

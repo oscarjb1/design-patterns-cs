@@ -3,16 +3,16 @@ using System;
 namespace oscarblancarte.ipd.mediator.module{
     public abstract class AbstractModule {
 
-        protected ModuleMediator mediator;
+        protected ModuleMediator Mediator;
 
-        public abstract string getModulName();
+        public abstract string GetModulName();
 
-        public void activate() {
-            mediator = ModuleMediator.getInstance();
-            mediator.registModule(this);
+        public void Activate() {
+            Mediator = ModuleMediator.getInstance();
+            Mediator.RegistModule(this);
         }
 
-        public abstract Object notifyMessage(ModuleMessage message);
+        public abstract Object NotifyMessage(ModuleMessage message);
     }
 }
 

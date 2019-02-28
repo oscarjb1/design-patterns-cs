@@ -7,20 +7,20 @@ namespace oscarblancarte.ipd.mediator.module.impl{
         public static readonly String MODULE_NAME = "Chopping";
         public const String OPERATION_PURCHASE_REQUEST = "PurchaseRequest";
 
-        public override string getModulName() {
+        public override string GetModulName() {
             return MODULE_NAME;
         }
 
-        public override Object notifyMessage(ModuleMessage message) {
-            switch (message.getMessageType()) {
+        public override Object NotifyMessage(ModuleMessage message) {
+            switch (message.MessageType) {
                 case OPERATION_PURCHASE_REQUEST:
-                    return purchaseRequest(message);
+                    return PurchaseRequest(message);
                 default:
-                    throw new SystemException("Operation not supported '" + message.getMessageType() + "'");
+                    throw new SystemException("Operation not supported '" + message.MessageType + "'");
             }
         }
 
-        private Object purchaseRequest(ModuleMessage message){
+        private Object PurchaseRequest(ModuleMessage message){
             return null;
         }
     }

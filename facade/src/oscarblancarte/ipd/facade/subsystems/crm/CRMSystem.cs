@@ -7,7 +7,7 @@ using System;
 namespace oscarblancarte.ipd.facade.subsystems.crm{
     public class CRMSystem {
         
-        public Customer findCustomer(Int64 customerId){
+        public Customer FindCustomer(Int64 customerId){
             return OnMemoryDataBase.findCustomerById(customerId);
         }
     }

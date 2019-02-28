@@ -7,22 +7,22 @@ using System;
 namespace oscarblancarte.ipd.interprete.sql.nonterminal{
     public class AndExpression : StatementExpression {
 
-        private readonly StatementExpression leftStatement;
-        private readonly StatementExpression rightStatement;
+        private readonly StatementExpression LeftStatement;
+        private readonly StatementExpression RightStatement;
 
-        public AndExpression(StatementExpression leftStatement,StatementExpression rightStatement) {
-            this.leftStatement = leftStatement;
-            this.rightStatement = rightStatement;
+        public AndExpression(StatementExpression LeftStatement,StatementExpression RightStatement) {
+            this.LeftStatement = LeftStatement;
+            this.RightStatement = RightStatement;
         }
 
-        public Object interpret(Context context) {
-            bool leftReslt = (bool) leftStatement.interpret(context);
-            bool rightReslt = (bool) rightStatement.interpret(context);
+        public Object Interpret(Context context) {
+            bool leftReslt = (bool) LeftStatement.Interpret(context);
+            bool rightReslt = (bool) RightStatement.Interpret(context);
             return leftReslt && rightReslt;
         }
 
         public override string ToString() {
-            return "( " + leftStatement.ToString() + " AND " + rightStatement.ToString() + " )";
+            return "( " + LeftStatement.ToString() + " AND " + RightStatement.ToString() + " )";
         }
     }
 

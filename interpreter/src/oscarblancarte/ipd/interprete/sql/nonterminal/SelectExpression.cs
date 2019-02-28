@@ -10,31 +10,31 @@ using System;
 namespace oscarblancarte.ipd.interprete.sql.nonterminal{
     public class SelectExpression {
 
-        private readonly TargetExpression target;
-        private readonly FromExpression from;
-        private readonly WhereExpression where;
+        private readonly TargetExpression Target;
+        private readonly FromExpression From;
+        private readonly WhereExpression Where;
         
         public SelectExpression(TargetExpression columns, FromExpression table,WhereExpression where){
-            this.target = columns;
-            this.from = table;
-            this.where = where;
+            this.Target = columns;
+            this.From = table;
+            this.Where = where;
         }
         
         public SelectExpression(TargetExpression columns, FromExpression table){
-            this.target = columns;
-            this.from = table;
-            this.where = new WhereExpression(null);
+            this.Target = columns;
+            this.From = table;
+            this.Where = new WhereExpression(null);
         }
         
-        public List<Object[]> interpret(Context context) {
-            from.interpret(context);
-            where.interpret(context);
-            target.interpret(context);
-            return context.getResultArray();
+        public List<Object[]> Interpret(Context context) {
+            From.Interpret(context);
+            Where.Interpret(context);
+            Target.Interpret(context);
+            return context.GetResultArray();
         }
 
         public override string ToString() {
-            return "SELECT " + target.ToString() + " " + from.ToString() + " " +  where.ToString();
+            return "SELECT " + Target.ToString() + " " + From.ToString() + " " +  Where.ToString();
         }
     }
 

@@ -17,15 +17,15 @@ namespace oscarblancarte.ipd.decorator{
                 
                 IMessage message1 = new EncryptMessage("user", "HG58YZ3CR9123456", 
                         new SOAPEnvelopMessage(
-                        new XMLFormatterDecorate(customerMessage))).processMessage();
+                        new XMLFormatterDecorate(customerMessage))).ProcessMessage();
                 Console.WriteLine("message1 =====================================>\n" 
-                        + message1.getContent() + "\n\n");
+                        + message1.GetContent() + "\n\n");
                 
                 IMessage message2 = new SOAPEnvelopMessage(
                         new EncryptMessage("user", "HG58YZ3CR9123456",
-                        new XMLFormatterDecorate(customerMessage))).processMessage();
+                        new XMLFormatterDecorate(customerMessage))).ProcessMessage();
                 Console.WriteLine("message2 =====================================>\n" 
-                        + message2.getContent());
+                        + message2.GetContent());
         }
         
         }

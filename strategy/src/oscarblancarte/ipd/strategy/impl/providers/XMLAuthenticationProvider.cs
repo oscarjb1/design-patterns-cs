@@ -9,8 +9,8 @@ using System.Xml;
 namespace oscarblancarte.ipd.strategy.impl.providers{
     public class XMLAuthenticationProvider : IAuthenticationStrategy {
 
-        private static readonly string rolXPath = "descendant::User[@userName='{0}' and @password='{1}']/@rol";
-        public Principal authenticate(string userName, string passwrd) {
+        private static readonly string RolXPath = "descendant::User[@userName='{0}' and @password='{1}']/@rol";
+        public Principal Authenticate(string userName, string passwrd) {
             try {
                 XmlDocument doc = new XmlDocument();  
                 doc.Load("./UserFile.xml");  
@@ -18,7 +18,7 @@ namespace oscarblancarte.ipd.strategy.impl.providers{
                 XmlNamespaceManager nsmgr = new XmlNamespaceManager(doc.NameTable);  
                 //nsmgr.AddNamespace("bk", "urn:newbooks-schema");  
                 
-                string xpath = string.Format(rolXPath, userName,passwrd);
+                string xpath = string.Format(RolXPath, userName,passwrd);
                 XmlNode node = root.SelectSingleNode(xpath, nsmgr);  
                 if(node == null){
                     return null;

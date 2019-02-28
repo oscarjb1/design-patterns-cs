@@ -14,18 +14,17 @@ namespace oscarblancarte.ipd.interprete.sql.terminal{
             
         }
 
-        public override Object interpret(Context context)  {
+        public override Object Interpret(Context context)  {
             try {
-                
-                DateTime date = DateTime.ParseExact(literal, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime date = DateTime.ParseExact(Literal, "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 return date;
             } catch (Exception e) {
-                throw new InterpreteException("Invalid date format '" + literal + "', " + e.ToString());
+                throw new InterpreteException("Invalid date format '" + Literal + "', " + e.ToString());
             }
         }
 
         public override string ToString() {
-            return "'"+literal+"'";
+            return "'"+Literal+"'";
         }
     }
 

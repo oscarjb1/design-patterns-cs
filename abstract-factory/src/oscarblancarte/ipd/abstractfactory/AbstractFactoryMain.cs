@@ -8,15 +8,15 @@ namespace oscarblancarte.ipd.abstractfactory
     {
         static void Main(string[] args)
         {
-            IServiceStackAbstractFactory factory = ServiceStackAbstractFactory.createServiceFactory();
-            IEmployeeService employeeService = factory.getEmployeeService();
-            IProductsService productService = factory.getProductsService();
+            IServiceStackAbstractFactory factory = ServiceStackAbstractFactory.CreateServiceFactory();
+            IEmployeeService employeeService = factory.GetEmployeeService();
+            IProductsService productService = factory.GetProductsService();
 
             Console.WriteLine("EmployeeService class > " + typeof(IEmployeeService).Name );
             Console.WriteLine("ProductService class  > " + typeof(IProductsService).Name);
 
-            Console.WriteLine("getEmployee > " + string.Join("", employeeService.getEmployee()));
-            Console.WriteLine("getProduct  > " + string.Join("", productService.getProducts()));
+            Console.WriteLine("getEmployee > " + string.Join("", employeeService.GetEmployee()));
+            Console.WriteLine("getProduct  > " + string.Join("", productService.GetProducts()));
 
         }
     }

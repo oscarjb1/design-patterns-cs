@@ -4,27 +4,27 @@ using System;
 namespace oscarblancarte.ipd.visitor.impl{
     public class CostProjectVisitor : IVisitor {
 
-        private double totalCost;
+        private double TotalCost;
 
-        public void project(Project project) {
+        public void Project(Project project) {
             foreach (Activitie act in project.GetActivities()) {
                 act.accept(this);
             }
         }
 
-        public void activitie(oscarblancarte.ipd.visitor.domain.Activitie activitie) {
+        public void Activitie(oscarblancarte.ipd.visitor.domain.Activitie activitie) {
             activitie.Responsible.accept(this);
             foreach (Activitie act in activitie.GetActivities()) {
                 act.accept(this);
             }
         }
 
-        public void employee(Employee employee) {
-            totalCost += employee.Price;
+        public void Employee(Employee employee) {
+            TotalCost += employee.Price;
         }
 
-        public Object getResult() {
-            return totalCost;
+        public Object GetResult() {
+            return TotalCost;
         }
     }
 }

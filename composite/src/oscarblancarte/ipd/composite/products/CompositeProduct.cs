@@ -6,30 +6,30 @@ using System.Collections.Generic;
 namespace oscarblancarte.ipd.composite.products{
     public class CompositeProduct : AbstractProduct {
 
-        private List<AbstractProduct> products = new List<AbstractProduct>();
+        private List<AbstractProduct> Products = new List<AbstractProduct>();
 
         public CompositeProduct(String name) : base(name, 0){
             
         }
 
-        public double getPrice() {
+        public double GetPrice() {
             double price = 0d;
-            foreach(AbstractProduct child in products) {
-                price += child.getPrice();
+            foreach(AbstractProduct child in Products) {
+                price += child.Price;
             }
             return price;
         }
 
-        public void setPrice(double price) {
+        public void SetPrice(double price) {
             throw new NotSupportedException();
         }
 
-        public void addProduct(AbstractProduct product) {
-            this.products.Add(product);
+        public void AddProduct(AbstractProduct product) {
+            this.Products.Add(product);
         }
 
-        public bool removeProduct(AbstractProduct product) {
-            return this.products.Remove(product);
+        public bool RemoveProduct(AbstractProduct product) {
+            return this.Products.Remove(product);
         }
     }
 }

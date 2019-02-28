@@ -5,7 +5,8 @@
     <RootNamespace>factory_method</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.0"/>
-    <PackageReference Include="Oracle.DataAccess.x86" Version="2.112.1"/>
+    <PackageReference Include="MySql.Data" Version="8.0.15"/>
+    <PackageReference Include="Authlete.Authlete" Version="1.2.0"/>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.18.3"/>
   </ItemGroup>
 </Project>

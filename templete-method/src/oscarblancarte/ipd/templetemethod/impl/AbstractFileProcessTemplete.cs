@@ -9,46 +9,46 @@ using oscarblancarte.ipd.templetemethod.util;
 namespace oscarblancarte.ipd.templetemethod.impl{
     public abstract class AbstractFileProcessTemplete {
 
-        protected FileInfo file;
-        protected string logPath;
-        protected string movePath;
+        protected FileInfo File;
+        protected string LogPath;
+        protected string MovePath;
 
-        public AbstractFileProcessTemplete(FileInfo file, string logPath, string movePath) {
-            this.file = file;
-            this.logPath = logPath;
-            this.movePath = movePath;
+        public AbstractFileProcessTemplete(FileInfo File, string LogPath, string MovePath) {
+            this.File = File;
+            this.LogPath = LogPath;
+            this.MovePath = MovePath;
         }
 
-        public void execute()  {
-            validateName();
-            validateProcess();
-            processFile();
-            createLog();
-            moveDocument();
-            markAsProcessFile();
+        public void Execute()  {
+            ValidateName();
+            ValidateProcess();
+            ProcessFile();
+            CreateLog();
+            MoveDocument();
+            MarkAsProcessFile();
         }
 
-        protected abstract void validateName() ;
+        protected abstract void ValidateName() ;
 
-        protected void validateProcess()  {
-            string fileStatus = OnMemoryDataBase.getFileStatus(file.Name);
+        protected void ValidateProcess()  {
+            string fileStatus = OnMemoryDataBase.GetFileStatus(File.Name);
             if (fileStatus != null && fileStatus.Equals("Processed")) {
-                throw new Exception("The file '" + file.Name + "' has already been processed");
+                throw new Exception("The file '" + File.Name + "' has already been processed");
             }
         }
 
-        protected abstract void processFile();
+        protected abstract void ProcessFile();
 
-        protected abstract void createLog();
+        protected abstract void CreateLog();
 
-        private void moveDocument()  {
-            string newPath = movePath+"/"+file.Name;
+        private void MoveDocument()  {
+            string newPath = MovePath+"/"+File.Name;
             Console.WriteLine("Move file => " + newPath);
-            file.MoveTo(newPath);
+            File.MoveTo(newPath);
         }
         
-        protected void markAsProcessFile() {
-            OnMemoryDataBase.setProcessFile(file.Name);
+        protected void MarkAsProcessFile() {
+            OnMemoryDataBase.SetProcessFile(File.Name);
         }
     }
 }

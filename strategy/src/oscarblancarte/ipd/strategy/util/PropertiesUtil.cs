@@ -8,7 +8,7 @@ using System;
  */
 namespace oscarblancarte.ipd.strategy.util{
     public class PropertiesUtil {
-        public static NameValueCollection loadProperty(){
+        public static NameValueCollection LoadProperty(){
             try {
                 //Properties properties = new Properties();
                 NameValueCollection props = ConfigurationManager.AppSettings;

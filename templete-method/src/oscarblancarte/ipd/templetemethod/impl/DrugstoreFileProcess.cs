@@ -9,14 +9,14 @@ using oscarblancarte.ipd.templetemethod.util;
 namespace oscarblancarte.ipd.templetemethod.impl{
     public class DrugstoreFileProcess : AbstractFileProcessTemplete {
 
-        private string log = "";
+        private string Log = "";
 
-        public DrugstoreFileProcess(FileInfo file, string logPath, string movePath) : base(file, logPath, movePath){
+        public DrugstoreFileProcess(FileInfo File, string LogPath, string MovePath) : base(File, LogPath, MovePath){
             
         }
 
-        protected override void validateName()  {
-            string fileName = file.Name;
+        protected override void ValidateName()  {
+            string fileName = File.Name;
             if (!fileName.EndsWith(".drug")) {
                 throw new Exception("Invalid file name format"
                         + ", must end with .drug");
@@ -27,9 +27,9 @@ namespace oscarblancarte.ipd.templetemethod.impl{
             }
         }
 
-        protected override void processFile()  {
+        protected override void ProcessFile()  {
             try {
-                StreamReader stream = new StreamReader(file.OpenRead());  
+                StreamReader stream = new StreamReader(File.OpenRead());  
                 string line;
                 while((line = stream.ReadLine()) != null)  
                 { 
@@ -37,15 +37,15 @@ namespace oscarblancarte.ipd.templetemethod.impl{
                     string customer = line.Substring(3, 2);
                     double amount = double.Parse(line.Substring(5, 3));
                     string date = line.Substring(8, 8);
-                    bool exist = OnMemoryDataBase.customerExist(int.Parse(customer));
+                    bool exist = OnMemoryDataBase.CustomerExist(int.Parse(customer));
 
                     if (!exist) {
-                        log += id + " E" + customer + "\t\t" + date + " Customer not exist\n";
+                        Log += id + " E" + customer + "\t\t" + date + " Customer not exist\n";
                     } else if (amount > 200) {
-                        log += id + " E" + customer + "\t\t" + date + " The amount exceeds the maximum\n";
+                        Log += id + " E" + customer + "\t\t" + date + " The amount exceeds the maximum\n";
                     } else {
                         //TODO Aplicar el pago en algún lugar.
-                        log += id + " E" + customer + "\t\t" + date + " Successfully applied\n";
+                        Log += id + " E" + customer + "\t\t" + date + " Successfully applied\n";
                     }
                 }
                 stream.Close(); 
@@ -54,9 +54,9 @@ namespace oscarblancarte.ipd.templetemethod.impl{
             }
         }
 
-        protected override void createLog()  {
+        protected override void CreateLog()  {
             try {
-                File.WriteAllText(logPath + "/" + file.Name, log);
+                System.IO.File.WriteAllText(LogPath + "/" + File.Name, Log);
             } catch(Exception e) {
                 throw new SystemException(e.ToString());
             }

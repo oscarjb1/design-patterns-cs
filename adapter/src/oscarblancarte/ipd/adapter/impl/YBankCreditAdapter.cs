@@ -14,8 +14,8 @@ namespace oscarblancarte.ipd.adapter.impl{
 
         public BankCreditResponse sendCreditRequest(BankCreditRequest request) {
             YBankCreditApprove yrequest = new YBankCreditApprove();
-            yrequest.setCredit((float) request.getAmount());
-            yrequest.setName(request.getCustomer());
+            yrequest.Credit = (float) request.getAmount();
+            yrequest.Name = request.getCustomer();
 
             YBankCreditSender sender = new YBankCreditSender();
             sender.sendCreditForValidate(yrequest, this);
@@ -30,7 +30,7 @@ namespace oscarblancarte.ipd.adapter.impl{
             } while (yresponse == null);
 
             BankCreditResponse response = new BankCreditResponse();
-            response.setApproved(yresponse.getApproved() == "Y" ? true : false);
+            response.setApproved(yresponse.Approved == "Y" ? true : false);
             return response;
         }
 

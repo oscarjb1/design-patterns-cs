@@ -6,13 +6,13 @@ namespace oscarblancarte.ipd.command.impl{
 
         private static readonly string COMMAND_NAME = "ERROR";
 
-        public override string getCommandName() {
+        public override string GetCommandName() {
             return COMMAND_NAME;
         }
 
-        public override void execute(string[] args, StreamWriter output) {
+        public override void Execute(string[] args, StreamWriter output) {
             string message = "Invocation error";
-            write(output, message);
+            Write(output, message);
         }
 
     }

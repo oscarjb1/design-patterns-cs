@@ -5,36 +5,8 @@
 namespace oscarblancarte.ipd.chainofresponsability.domain{
     public class Telephone {
 
-        private string lada;
-        private string number;
-        private string ext;
-
-        public string getLada() {
-            return lada;
-        }
-
-        public void setLada(string lada) {
-            this.lada = lada;
-        }
-
-        public string getNumber() {
-            return number;
-        }
-
-        public void setNumber(string number) {
-            this.number = number;
-        }
-
-        public string getExt() {
-            return ext;
-        }
-
-        public void setExt(string ext) {
-            this.ext = ext;
-        }
-
+        public string Lada{get; set;}
+        public string Number{get; set;}
+        public string Ext{get; set;}
     }
-
 }
-
-

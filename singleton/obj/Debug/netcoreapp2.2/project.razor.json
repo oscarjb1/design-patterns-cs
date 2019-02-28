@@ -2,5 +2,13 @@
   "ProjectFilePath": "c:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\singleton\\singleton.csproj",
   "TargetFramework": "netcoreapp2.2",
   "TagHelpers": [],
-  "Configuration": null
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
 }

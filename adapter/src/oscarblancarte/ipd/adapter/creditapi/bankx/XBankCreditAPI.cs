@@ -10,10 +10,10 @@ namespace oscarblancarte.ipd.adapter.creditapi.bankx{
         
         public XBankCreditResponse SendCreditRequest(XBankCreditRequest request){
             XBankCreditResponse response =new XBankCreditResponse();
-            if(request.getRequestAmount()<= 5000){
-                response.setAproval(true);
+            if(request.RequestAmount<= 5000){
+                response.Aproval = true;
             }else{
-                response.setAproval(false);
+                response.Aproval = false;
             }
             return response;
         }

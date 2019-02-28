@@ -3,9 +3,9 @@ using System.IO;
 namespace oscarblancarte.ipd.command{
     public interface ICommand {
 
-        string getCommandName();
+        string GetCommandName();
 
-        void execute(string[] args, StreamWriter output);
+        void Execute(string[] args, StreamWriter output);
     }
 }
 

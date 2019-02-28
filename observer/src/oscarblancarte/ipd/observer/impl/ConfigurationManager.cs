@@ -8,37 +8,37 @@ using oscarblancarte.ipd.observer.impl;
 namespace oscarblancarte.ipd.observer{
     public class ConfigurationManager : AbstractObservable {
 
-        private string defaultDateFormat;
-        private string moneyFormat;
+        private string DefaultDateFormat;
+        private string MoneyFormat;
 
-        private static ConfigurationManager configurationManager;
+        private static ConfigurationManager ConfManager;
 
         private ConfigurationManager() {
         }
 
-        public static ConfigurationManager getInstance() {
-            if (configurationManager == null) {
-                configurationManager = new ConfigurationManager();
+        public static ConfigurationManager GetInstance() {
+            if (ConfManager == null) {
+                ConfManager = new ConfigurationManager();
             }
-            return configurationManager;
+            return ConfManager;
         }
 
-        public string getDefaultDateFormat() {
-            return defaultDateFormat;
+        public string GetDefaultDateFormat() {
+            return DefaultDateFormat;
         }
 
         public void setDefaultDateFormat(string defaultDateFormat) {
-            this.defaultDateFormat = defaultDateFormat;
-            notifyAllObservers("defaultDateFormat", this);
+            this.DefaultDateFormat = defaultDateFormat;
+            NotifyAllObservers("defaultDateFormat", this);
         }
 
-        public string getMoneyFormat() {
-            return moneyFormat;
+        public string GetMoneyFormat() {
+            return MoneyFormat;
         }
 
-        public void setMoneyFormat(string moneyFormat) {
-            this.moneyFormat = moneyFormat;
-            notifyAllObservers("moneyFormat", this);
+        public void SetMoneyFormat(string moneyFormat) {
+            this.MoneyFormat = moneyFormat;
+            NotifyAllObservers("moneyFormat", this);
         }
     }
 }

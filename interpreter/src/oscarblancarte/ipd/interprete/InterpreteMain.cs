@@ -14,23 +14,23 @@ namespace oscarblancarte.ipd.interprete{
 
         static void Main(string[] args) {
             //Abstract Syntactic Tree
-            SelectExpression select = getById();
+            SelectExpression select = GetById();
             Console.WriteLine(select.ToString());
             Context context = new Context("./Employee.xls");
-            context.setDateFormat("MM/dd/yyyy");
+            context.SetDateFormat("MM/dd/yyyy");
             try {
-                List<Object[]> output = select.interpret(context);
+                List<Object[]> output = select.Interpret(context);
                 foreach(Object[] obj in output) {
                     Console.WriteLine(string.Join(" ", obj) );
                 }
             } catch (InterpreteException e) {
                 Console.WriteLine(e.ToString());
             } finally {
-                context.destroy();
+                context.Destroy();
             }
         }
 
-        public static SelectExpression getById() {
+        public static SelectExpression GetById() {
             SelectExpression select = new SelectExpression(
                     new TargetExpression(
                             new LiteralExpression("FIRST_NAME"),
@@ -49,7 +49,7 @@ namespace oscarblancarte.ipd.interprete{
             return select;
         }
 
-        public static SelectExpression findByDate() {
+        public static SelectExpression FindByDate() {
             SelectExpression select = new SelectExpression(
                     new TargetExpression(
                             new LiteralExpression("ID"),
@@ -71,7 +71,7 @@ namespace oscarblancarte.ipd.interprete{
             return select;
         }
 
-        public static SelectExpression findByTwoID() {
+        public static SelectExpression FindByTwoID() {
             SelectExpression select = new SelectExpression(
                     new TargetExpression(
                             
@@ -99,7 +99,7 @@ namespace oscarblancarte.ipd.interprete{
             return select;
         }
 
-        public static SelectExpression complexQuery() {
+        public static SelectExpression ComplexQuery() {
             SelectExpression select = new SelectExpression(
             new TargetExpression(
                 new LiteralExpression("FIRST_NAME"),

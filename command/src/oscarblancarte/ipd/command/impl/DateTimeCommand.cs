@@ -6,11 +6,11 @@ namespace oscarblancarte.ipd.command.impl{
 
         public static readonly string COMMAND_NAME = "date";
 
-        public override string getCommandName() {
+        public override string GetCommandName() {
             return COMMAND_NAME;
         }
 
-        public override void execute(string[] args, StreamWriter output) {
+        public override void Execute(string[] args, StreamWriter output) {
 
             string dateFormater = null;
             if (args == null || args.Length == 0) {
@@ -20,9 +20,9 @@ namespace oscarblancarte.ipd.command.impl{
             }
             DateTime date = DateTime.Now;
             try {
-                write(output, date.ToString(dateFormater));
+                Write(output, date.ToString(dateFormater));
             } catch (Exception e) {
-                write(output, "invalid format");
+                Write(output, "invalid format");
             }
         }
     }

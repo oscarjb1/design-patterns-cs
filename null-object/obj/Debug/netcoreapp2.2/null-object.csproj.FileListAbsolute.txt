@@ -1,0 +1,11 @@
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\bin\Debug\netcoreapp2.2\null-object.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\bin\Debug\netcoreapp2.2\null-object.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\bin\Debug\netcoreapp2.2\null-object.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\bin\Debug\netcoreapp2.2\null-object.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\bin\Debug\netcoreapp2.2\null-object.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\obj\Debug\netcoreapp2.2\null-object.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\obj\Debug\netcoreapp2.2\null-object.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\obj\Debug\netcoreapp2.2\null-object.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\obj\Debug\netcoreapp2.2\null-object.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\obj\Debug\netcoreapp2.2\null-object.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\null-object\obj\Debug\netcoreapp2.2\null-object.pdb

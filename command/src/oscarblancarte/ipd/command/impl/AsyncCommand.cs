@@ -7,17 +7,17 @@ namespace oscarblancarte.ipd.command.impl{
         
 
         public void StartThread(string[] args,  StreamWriter output){
-            executeOnBackground(args, output);
+            ExecuteOnBackground(args, output);
         }
 
-        public override void execute(string[] args,  StreamWriter output) {
+        public override void Execute(string[] args,  StreamWriter output) {
 
             Thread thread = new Thread( () => StartThread(args, output));
             thread.Start();
 
         }
 
-        public abstract void executeOnBackground(string[] args, StreamWriter output);
+        public abstract void ExecuteOnBackground(string[] args, StreamWriter output);
     }
 
 }

@@ -6,33 +6,33 @@
 namespace oscarblancarte.ipd.decorator.impl.message{
     public class TextMessage : IMessage {
 
-        private string content;
+        private string Content;
 
         public TextMessage() {
         }
 
         public TextMessage(string message) {
-            this.content = message;
+            this.Content = message;
         }
 
-        public string getMessage() {
-            return content;
+        public string GetMessage() {
+            return Content;
         }
 
-        public void setMessage(string message) {
-            this.content = message;
+        public void SetMessage(string message) {
+            this.Content = message;
         }
 
-        public IMessage processMessage() {
+        public IMessage ProcessMessage() {
             return this;
         }
 
-        public string getContent() {
-            return content;
+        public string GetContent() {
+            return Content;
         }
 
-        public void setContent(string content) {
-            this.content = content;
+        public void SetContent(string content) {
+            this.Content = content;
         }
     }
 }

@@ -9,11 +9,11 @@ using System;
 
 namespace oscarblancarte.ipd.abstractfactory.rest{
     public class RestServiceStackImpl : IServiceStackAbstractFactory{
-        public IEmployeeService getEmployeeService() {
+        public IEmployeeService GetEmployeeService() {
             return new EmployeeServiceRestImpl();
         }
 
-        public IProductsService getProductsService() {
+        public IProductsService GetProductsService() {
             return new ProductServiceRestImpl();
         }
     }

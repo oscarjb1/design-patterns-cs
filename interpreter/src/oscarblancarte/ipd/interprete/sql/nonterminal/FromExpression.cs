@@ -9,22 +9,22 @@ using System;
 namespace oscarblancarte.ipd.interprete.sql.nonterminal{
     public class FromExpression : AbstractSQLExpression {
         
-        private LiteralExpression table;
+        private LiteralExpression Table;
         
         public FromExpression(LiteralExpression from){
-            this.table = from;
+            this.Table = from;
         }
 
-        public Object interpret(Context context) {
-            string tableName = table.interpret(context).ToString();
-            if(!context.tableExist(tableName)){
+        public Object Interpret(Context context) {
+            string tableName = Table.Interpret(context).ToString();
+            if(!context.TableExist(tableName)){
                 throw new InterpreteException("The table '"+tableName+"' not exist");
             }
             return null;
         }
 
         public override string ToString() {
-            return "FROM " + table.ToString();
+            return "FROM " + Table.ToString();
         }
     }
 

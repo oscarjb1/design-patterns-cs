@@ -5,17 +5,17 @@ using System;
  */
 namespace oscarblancarte.ipd.strategy.impl{
     public class AuthenticationProvider {
-        private IAuthenticationStrategy authenticationStrategy;
+        private IAuthenticationStrategy AuthenticationStrategy;
         
-        public void setAuthenticationStrategy(IAuthenticationStrategy strategy){
-            this.authenticationStrategy = strategy;
+        public void SetAuthenticationStrategy(IAuthenticationStrategy strategy){
+            this.AuthenticationStrategy = strategy;
         }
         
-        public Principal authenticate(String userName, String password){
-            if(authenticationStrategy==null){
+        public Principal Authenticate(String userName, String password){
+            if(AuthenticationStrategy==null){
                 throw new SystemException("Strategy not found");
             }
-            return authenticationStrategy.authenticate(userName, password);
+            return AuthenticationStrategy.Authenticate(userName, password);
         }
     }
 }

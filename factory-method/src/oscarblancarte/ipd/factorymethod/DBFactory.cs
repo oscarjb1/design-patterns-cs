@@ -1,32 +1,34 @@
 using oscarblancarte.ipd.factorymethod.impl;
 using oscarblancarte.ipd.factorymethod.util;
 using System;
+using System.Collections.Generic;
 
 namespace oscarblancarte.ipd.factorymethod{
     public class DBFactory {
 
-        private static readonly string DB_FACTORY_PROPERTY_URL = "META-INF/DBFactory.properties";
+        private static readonly string DB_FACTORY_PROPERTY_URL = "./DBFactory.properties";
         private static readonly string DEFAULT_DB_CLASS_PROP = "defaultDBClass";
 
-        public static IDBAdapter getDBadapter(DBType dbType) {
+        public static IDBAdapter GetDBadapter(DBType dbType) {
             switch (dbType) {
-                case MySQL:
+                case DBType.MySQL:
                     return new MySQLDBAdapter();
-                case Oracle:
+                case DBType.Oracle:
                     return new OracleDBAdapter();
                 default:
-                    throw new IllegalArgumentException("Not supported");
+                    throw new SystemException("Not supported");
             }
         }
 
-        public static IDBAdapter getDefaultDBAdapter() {
+        public static IDBAdapter GetDefaultDBAdapter() {
             try {
-                Properties prop = PropertiesUtil.loadProperty(DB_FACTORY_PROPERTY_URL);
-                String defaultDBClass = prop.getProperty(DEFAULT_DB_CLASS_PROP);
+                IDictionary<string,string> prop = PropertiesUtil.LoadProperty(DB_FACTORY_PROPERTY_URL);
+                String defaultDBClass = prop[DEFAULT_DB_CLASS_PROP];
                 Console.WriteLine("DefaultDBClass ==> " + defaultDBClass);
-                return (IDBAdapter) Class.forName(defaultDBClass).newInstance();
+                Type type = Type.GetType(defaultDBClass);
+                return (IDBAdapter) Activator.CreateInstance(type);
             } catch (Exception e) {
-                e.printStackTrace();
+                Console.WriteLine(e.ToString());
                 return null;
             }
         }

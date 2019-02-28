@@ -7,7 +7,7 @@ using oscarblancarte.ipd.objectpool.impl.poolable;
  */
 namespace oscarblancarte.ipd.objectpool.impl.factory{
     public class ExecutorTaskFactory  : IPoolableObjectFactory<ExecutorTask>{
-        public ExecutorTask createNew(){
+        public ExecutorTask CreateNew(){
             return new ExecutorTask();
         }
     }

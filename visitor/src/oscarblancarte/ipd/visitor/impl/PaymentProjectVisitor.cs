@@ -8,20 +8,20 @@ namespace oscarblancarte.ipd.visitor.impl{
 
         private Dictionary<string, double> employeePayment = new Dictionary<string, double>();
 
-        public void project(Project project) {
+        public void Project(Project project) {
             foreach (Activitie act in project.Activities) {
                 act.accept(this);
             }
         }
 
-        public void activitie(Activitie activitie) {
+        public void Activitie(Activitie activitie) {
             activitie.Responsible.accept(this);
             foreach (Activitie act in activitie.Activities) {
                 act.accept(this);
             }
         }
 
-        public void employee(Employee employee) {
+        public void Employee(Employee employee) {
             string resp = employee.Name;
             if (employeePayment.ContainsKey(resp)) {
                 employeePayment[resp] = employeePayment[resp] + employee.Price;
@@ -30,7 +30,7 @@ namespace oscarblancarte.ipd.visitor.impl{
             }
         }
 
-        public Object getResult() {
+        public Object GetResult() {
             List<EmployeePay> response = new List<EmployeePay>();
 
             foreach (string key in employeePayment.Keys) {

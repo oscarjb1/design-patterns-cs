@@ -9,7 +9,7 @@ namespace oscarblancarte.ipd.abstractfactory.service
 {
     public interface IEmployeeService
     {
-        string[] getEmployee();
+        string[] GetEmployee();
     }
 }
 

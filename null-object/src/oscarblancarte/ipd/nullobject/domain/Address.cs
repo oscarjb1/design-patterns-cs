@@ -3,23 +3,13 @@ namespace oscarblancarte.ipd.nullobject.domain{
 
         public static readonly Address NULL_ADDRESS = new Address("NOT ADDRESS") ;  
 
-        public string fullAddress;
+        public string FullAddress{get; set;}
 
-        public Address(string fullAddress) {
-            this.fullAddress = fullAddress;
+        public Address(string FullAddress) {
+            this.FullAddress = FullAddress;
         }
 
         public Address() {
         }
-
-        public string getFullAddress() {
-            return fullAddress;
-        }
-
-        public void setFullAddress(string fullAddress) {
-            this.fullAddress = fullAddress;
-        }
     }
-
 }
-

@@ -17,23 +17,23 @@ namespace oscarblancarte.ipd.prototype{
                 ProductItem item = new ProductItem("Product " + c, c*2);
                 standarPriceList.addProductItem(item);
             }
-            PrototypeFactory.addPrototype(standarPriceList.getListName(), standarPriceList);
+            PrototypeFactory.AddPrototype(standarPriceList.getListName(), standarPriceList);
             
             //Second list for wholesale customers from the list
             //standard with a 10% discount on the standard price list.
-            PriceListImpl wholesalePriceList = (PriceListImpl) PrototypeFactory.getPrototype("Standar Price List");
+            PriceListImpl wholesalePriceList = (PriceListImpl) PrototypeFactory.GetPrototype("Standar Price List");
             wholesalePriceList.setListName("Wholesale Price List");
             foreach(ProductItem item in wholesalePriceList.getProducts()){
-                item.setPrice(item.getPrice()*0.90);
+                item.Price  = item.Price*0.90;
             }
-            PrototypeFactory.addPrototype(wholesalePriceList.getListName(), wholesalePriceList);
+            PrototypeFactory.AddPrototype(wholesalePriceList.getListName(), wholesalePriceList);
             
             //Third price list for VIP customers from the list
             //wholesale with 10% on the wholesale price list.
-            PriceListImpl vipPriceList = (PriceListImpl) PrototypeFactory.getPrototype("Wholesale Price List");
+            PriceListImpl vipPriceList = (PriceListImpl) PrototypeFactory.GetPrototype("Wholesale Price List");
             vipPriceList.setListName("VIP Price List");
             foreach(ProductItem item in vipPriceList.getProducts()){
-                item.setPrice(item.getPrice()*0.90);
+                item.Price = item.Price*0.90;
             }
             
             //Imprimimos las listas de precio.

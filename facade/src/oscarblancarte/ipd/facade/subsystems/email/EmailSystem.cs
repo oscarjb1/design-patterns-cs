@@ -8,7 +8,7 @@ using System;
 namespace oscarblancarte.ipd.facade.subsystems.email{
     public class EmailSystem {
 
-        public void sendEmail(Dictionary<string, string> values) {
+        public void SendEmail(Dictionary<string, string> values) {
             string templete = "\n**************************************\n"
                     + "|To: $name\n"
                     + "|from: FacadeSystem\n"

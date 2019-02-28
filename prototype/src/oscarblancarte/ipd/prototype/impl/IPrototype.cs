@@ -9,8 +9,8 @@ using System;
 namespace oscarblancarte.ipd.prototype.impl{
     public interface IPrototype
     {
-        IPrototype clone();
-        IPrototype deepClone();
+        IPrototype Clone();
+        IPrototype DeepClone();
     }
 }
 

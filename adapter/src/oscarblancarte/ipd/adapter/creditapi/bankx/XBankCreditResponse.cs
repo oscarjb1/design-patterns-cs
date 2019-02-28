@@ -5,16 +5,7 @@
 
 namespace oscarblancarte.ipd.adapter.creditapi.bankx{
     public class XBankCreditResponse {
-        public bool aproval;
+        public bool Aproval{get; set;}
 
-        public bool isAproval() {
-            return aproval;
-        }
-
-        public void setAproval(bool aproval) {
-            this.aproval = aproval;
-        }
     }
 }
-
-

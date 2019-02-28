@@ -8,61 +8,61 @@ using System.Collections.Generic;
 namespace oscarblancarte.ipd.composite.orders{
     public class SaleOrder {
 
-        private long orderId;
-        private string customer;
-        private List<AbstractProduct> products = new List<AbstractProduct>();
+        private long OrderId;
+        private string Customer;
+        private List<AbstractProduct> Products = new List<AbstractProduct>();
 
         public SaleOrder(long orderId, string customer) {
-            this.orderId = orderId;
-            this.customer = customer;
+            this.OrderId = orderId;
+            this.Customer = customer;
         }
         
-        public double getPrice() {
+        public double GetPrice() {
             double price = 0d;
-            foreach(AbstractProduct child in products) {
-                price += child.getPrice();
+            foreach(AbstractProduct child in Products) {
+                price += child.Price;
             }
             return price;
         }
 
-        public void addProduct(AbstractProduct product) {
-            products.Add(product);
+        public void AddProduct(AbstractProduct product) {
+            Products.Add(product);
         }
 
-        public void printOrder() {
+        public void PrintOrder() {
             Console.WriteLine("\\\n============================================="
-                    + "\nOrden: " + orderId + "\nCustomer: " + customer 
+                    + "\nOrden: " + OrderId + "\nCustomer: " + Customer 
                     + "\nProducts:\n");
-            foreach(AbstractProduct prod in products) {
-                Console.WriteLine(prod.getName() + "\t\t\t$ " 
-                        + prod.getPrice().ToString("###,##0.0000"));
+            foreach(AbstractProduct prod in Products) {
+                Console.WriteLine(prod.Name + "\t\t\t$ " 
+                        + prod.Price.ToString("###,##0.0000"));
             }
-            Console.WriteLine("Total: " + getPrice().ToString("###,##0.0000") 
+            Console.WriteLine("Total: " + GetPrice().ToString("###,##0.0000") 
                     + "\n=============================================");
         }
 
-        public long getOrderId() {
-            return orderId;
+        public long GetOrderId() {
+            return OrderId;
         }
 
-        public void setOrderId(long orderId) {
-            this.orderId = orderId;
+        public void SetOrderId(long orderId) {
+            this.OrderId = orderId;
         }
 
-        public string getCustomer() {
-            return customer;
+        public string GetCustomer() {
+            return Customer;
         }
 
-        public void setCustomer(string customer) {
-            this.customer = customer;
+        public void SetCustomer(string customer) {
+            this.Customer = customer;
         }
 
-        public List<AbstractProduct> getProducts() {
-            return products;
+        public List<AbstractProduct> GetProducts() {
+            return Products;
         }
 
-        public void setProducts(List<AbstractProduct> products) {
-            this.products = products;
+        public void SetProducts(List<AbstractProduct> products) {
+            this.Products = products;
         }
     }
 }

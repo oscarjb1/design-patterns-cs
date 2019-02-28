@@ -4,14 +4,14 @@ using oscarblancarte.ipd.memento.entity;
 namespace oscarblancarte.ipd.memento.impl{
     public class EmployeeMemento {
         
-        public Employee employee;
+        public Employee Employee;
         
-        public EmployeeMemento(Employee employee){
-            this.employee = employee;
+        public EmployeeMemento(Employee Employee){
+            this.Employee = Employee;
         }
         
         public Employee getMemento(){
-            return employee;
+            return Employee;
         }
     }
 }

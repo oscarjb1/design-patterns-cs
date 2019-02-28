@@ -6,7 +6,7 @@ using System;
  */
 namespace oscarblancarte.ipd.interprete.sql{
     public interface AbstractSQLExpression {
-        Object interpret(Context context) ;
+        Object Interpret(Context context) ;
     }
 }
 

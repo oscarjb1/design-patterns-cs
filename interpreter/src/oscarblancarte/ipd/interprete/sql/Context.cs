@@ -17,72 +17,72 @@ using System.IO;
  */
 namespace oscarblancarte.ipd.interprete.sql{
     public class Context {
-        private string dateFormat;
-        private HSSFWorkbook workboook;
-        private ISheet sheets;
-        private string[] columns;
-        private readonly string dbPath;
-        private IEnumerator<IRow> tableIterator;
-        private readonly List<IRow> resultRows = new List<IRow>();
-        private IRow currentRow;
-        private List<Object[]> result;
-        private int resultColumnCount;
+        private string DateFormat;
+        private HSSFWorkbook Workboook;
+        private ISheet Sheets;
+        private string[] Columns;
+        private readonly string DbPath;
+        private IEnumerator<IRow> TableIterator;
+        private readonly List<IRow> ResultRows = new List<IRow>();
+        private IRow CurrentRow;
+        private List<Object[]> Result;
+        private int ResultColumnCount;
 
         public Context(string dbPath) {
-            this.dbPath = dbPath;
-            initiateFileRead();
+            this.DbPath = dbPath;
+            InitiateFileRead();
         }
         
-        public void createResultArray(int columns){
-            this.resultColumnCount = columns;
-            result = new List<Object[]>();
+        public void CreateResultArray(int columns){
+            this.ResultColumnCount = columns;
+            Result = new List<Object[]>();
         }
 
-        public string getDateFormat() {
-            return dateFormat;
+        public string GetDateFormat() {
+            return DateFormat;
         }
 
-        public void setDateFormat(string dateFormat) {
-            this.dateFormat = dateFormat;
+        public void SetDateFormat(string dateFormat) {
+            this.DateFormat = dateFormat;
         }
         
-        public List<Object[]> getResultArray(){
-            return result;
+        public List<Object[]> GetResultArray(){
+            return Result;
         }
         
-        public Object[] createRow(){
-            Object[] row = new Object[resultColumnCount];
-            result.Add(row);
+        public Object[] CreateRow(){
+            Object[] row = new Object[ResultColumnCount];
+            Result.Add(row);
             return row;
         }
         
-        public List<IRow> getResultRow(){
-            return resultRows;
+        public List<IRow> GetResultRow(){
+            return ResultRows;
         }
 
         
 
-        private void initiateFileRead() {
+        private void InitiateFileRead() {
             try {
-                FileStream SourceStream = File.Open(dbPath, FileMode.Open);
-                workboook = new HSSFWorkbook(SourceStream);
+                FileStream SourceStream = File.Open(DbPath, FileMode.Open);
+                Workboook = new HSSFWorkbook(SourceStream);
             } catch (IOException e) {
                 Console.WriteLine(e.ToString());
             }
         }
 
-        public void createRowIterator() {
-            tableIterator = (IEnumerator<IRow>) sheets.GetRowEnumerator();
-            tableIterator.MoveNext();
+        public void CreateRowIterator() {
+            TableIterator = (IEnumerator<IRow>) Sheets.GetRowEnumerator();
+            TableIterator.MoveNext();
         }
 
-        public IRow getCurrentRow() {
-            return currentRow;
+        public IRow GetCurrentRow() {
+            return CurrentRow;
         }
 
-        public bool nextRow() {
-            bool next = tableIterator.MoveNext();
-            currentRow = tableIterator.Current;
+        public bool NextRow() {
+            bool next = TableIterator.MoveNext();
+            CurrentRow = TableIterator.Current;
             return next;
             /*if (tableIterator.hasNext()) {
                 currentRow = tableIterator.next();
@@ -91,51 +91,51 @@ namespace oscarblancarte.ipd.interprete.sql{
             return false;*/
         }
 
-        public IEnumerator<IRow> getRowIterator() {
-            return tableIterator;
+        public IEnumerator<IRow> GetRowIterator() {
+            return TableIterator;
         }
 
-        public void addCurrentRowToResults() {
-            resultRows.Add(currentRow);
+        public void AddCurrentRowToResults() {
+            ResultRows.Add(CurrentRow);
         }
 
-        public void destroy() {
+        public void Destroy() {
             try {
-                workboook.Close();
+                Workboook.Close();
             } catch (Exception e) {
                 Console.WriteLine(e.ToString());
             }
         }
 
-        public bool tableExist(string table) {
-            return loadTable(table);
+        public bool TableExist(string table) {
+            return LoadTable(table);
         }
 
-        private bool loadTable(string table) {
+        private bool LoadTable(string table) {
 
-            if (columns != null) {
+            if (Columns != null) {
                 return true;
             }
             
-            sheets = workboook.GetSheet(table);
-            if (sheets == null) {
+            Sheets = Workboook.GetSheet(table);
+            if (Sheets == null) {
                 return false;
             }
-            foreach (IRow row in sheets) {
+            foreach (IRow row in Sheets) {
                 int lastRow = row.LastCellNum;
-                columns = new string[lastRow];
+                Columns = new string[lastRow];
                 int index = 0;
                 foreach (ICell cell in row) {
-                    columns[index++] = cell.StringCellValue;
+                    Columns[index++] = cell.StringCellValue;
                 }
-                Console.WriteLine("Table > '" + table + "' Colums > '" + string.Join(" ", columns) + "'");
+                Console.WriteLine("Table > '" + table + "' Colums > '" + string.Join(" ", Columns) + "'");
                 break;
             }
             return true;
         }
 
-        public bool tableColumn(string column) {
-            foreach (string col in columns) {
+        public bool TableColumn(string column) {
+            foreach (string col in Columns) {
                 if (string.Equals(col,column,StringComparison.InvariantCultureIgnoreCase)) {
                     return true;
                 }
@@ -143,9 +143,9 @@ namespace oscarblancarte.ipd.interprete.sql{
             return false;
         }
 
-        public int columnIndex( string column) {
-            for (int c = 0; c < columns.Length; c++) {
-                if (string.Equals(columns[c],column,StringComparison.InvariantCultureIgnoreCase)) {
+        public int ColumnIndex( string column) {
+            for (int c = 0; c < Columns.Length; c++) {
+                if (string.Equals(Columns[c],column,StringComparison.InvariantCultureIgnoreCase)) {
                     return c;
                 }
             }

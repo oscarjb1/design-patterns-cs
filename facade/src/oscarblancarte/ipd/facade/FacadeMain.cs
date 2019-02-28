@@ -16,16 +16,16 @@ namespace oscarblancarte.ipd.facade{
             //number.Length-4, number.Length
 
             PaymentRequest request = new PaymentRequest();
-            request.setAmmount(500);
-            request.setCardExpDate("10/2015");
-            request.setCardName("Oscar Blancarte");
-            request.setCardNumber("1234567890123456");
-            request.setCardSecureNum("345");
-            request.setCustomerId(1L);
+            request.Ammount = 500;
+            request.CardExpDate = "10/2015";
+            request.CardName = "Oscar Blancarte";
+            request.CardNumber = "1234567890123456";
+            request.CardSecureNum = "345";
+            request.CustomerId = 1L;
 
             try {
                 IPaymentFacade paymentFacade = new OnlinePaymentFacadeImpl();
-                paymentFacade.pay(request);
+                paymentFacade.Pay(request);
             } catch (Exception e) {
                 Console.WriteLine(e.ToString());
             }

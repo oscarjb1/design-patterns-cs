@@ -15,11 +15,11 @@ namespace oscarblancarte.ipd.factorymethod{
             ProductDAO productDAO = new ProductDAO();
             
             //Product persist  
-            productDAO.saveProduct(productA);
-            productDAO.saveProduct(productB);
+            productDAO.SaveProduct(productA);
+            productDAO.SaveProduct(productB);
             
             //Create the products  
-            List<Product> products = productDAO.findAllProducts();
+            List<Product> products = productDAO.FindAllProducts();
 
             Console.WriteLine("Product size ==> " + products.Count);
             foreach(Product product in products){

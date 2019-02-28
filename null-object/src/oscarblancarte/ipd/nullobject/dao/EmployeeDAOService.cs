@@ -12,9 +12,9 @@ namespace oscarblancarte.ipd.nullobject.dao{
             EMPLOYEE_LIST.Add(emp1);
         }
         
-        public Employee findEmployeeById(Int64 id){
+        public Employee findEmployeeById(Int64 Id){
             foreach(Employee emp in EMPLOYEE_LIST){
-                if(emp.getId() == id){
+                if(emp.Id == Id){
                     return emp;
                 }
             }

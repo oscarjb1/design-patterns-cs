@@ -9,3 +9,14 @@ C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator2\obj\Debug\netcore
 C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator2\obj\Debug\netcoreapp2.2\mediator2.AssemblyInfo.cs
 C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator2\obj\Debug\netcoreapp2.2\mediator2.dll
 C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator2\obj\Debug\netcoreapp2.2\mediator2.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\bin\Debug\netcoreapp2.2\mediator2.deps.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\bin\Debug\netcoreapp2.2\mediator2.runtimeconfig.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\bin\Debug\netcoreapp2.2\mediator2.runtimeconfig.dev.json
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\bin\Debug\netcoreapp2.2\mediator2.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\bin\Debug\netcoreapp2.2\mediator2.pdb
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\obj\Debug\netcoreapp2.2\mediator2.csprojAssemblyReference.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\obj\Debug\netcoreapp2.2\mediator2.csproj.CoreCompileInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\obj\Debug\netcoreapp2.2\mediator2.AssemblyInfoInputs.cache
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\obj\Debug\netcoreapp2.2\mediator2.AssemblyInfo.cs
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\obj\Debug\netcoreapp2.2\mediator2.dll
+C:\Desarrollo\pattern-book-github\design-patterns-cs\mediator\obj\Debug\netcoreapp2.2\mediator2.pdb

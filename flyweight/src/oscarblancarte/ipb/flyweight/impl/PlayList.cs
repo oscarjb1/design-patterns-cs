@@ -8,36 +8,30 @@ using System;
 namespace oscarblancarte.ipb.flyweight.impl{
     public class PlayList {
 
-        private string playListName;
-        private List<PlayItem> playItems = new List<PlayItem>();
+        public string PlayListName{get; set;}
+        private List<PlayItem> PlayItems = new List<PlayItem>();
 
         public PlayList(string playListName) {
-            this.playListName = playListName;
+            this.PlayListName = playListName;
         }
 
-        public string getPlayListName() {
-            return playListName;
-        }
-
-        public void setPlayListName(string playListName) {
-            this.playListName = playListName;
-        }
+       
 
         public List<PlayItem> getPlayItems() {
-            return playItems;
+            return PlayItems;
         }
 
         public void setPlayItems(List<PlayItem> playItems) {
-            this.playItems = playItems;
+            this.PlayItems = playItems;
         }
 
         public void addPlayItem(string songName) {
-            playItems.Add(PlayItemFactory.createPlayItem(songName));
+            PlayItems.Add(PlayItemFactory.createPlayItem(songName));
         }
 
         public void printList() {
-            string output = "\nPlayList > " + playListName;
-            foreach (PlayItem playItem in playItems) {
+            string output = "\nPlayList > " + PlayListName;
+            foreach (PlayItem playItem in PlayItems) {
                 output = output + "\n\t" + playItem.ToString();
             }
             Console.WriteLine(output);

@@ -22,13 +22,13 @@ namespace oscarblancarte.ipd.visitor{
             //Obtain the total cost of the project  
             CostProjectVisitor costVisitor = new CostProjectVisitor();
             project.accept(costVisitor);
-            double cost = (double) costVisitor.getResult();
+            double cost = (double) costVisitor.GetResult();
             Console.WriteLine("Total cost > " + cost);
 
             //Get the sale price of the project  
             PriceProjectVisitor priceVisitor = new PriceProjectVisitor();
             project.accept(priceVisitor);
-            double price = (double) priceVisitor.getResult();
+            double price = (double) priceVisitor.GetResult();
             Console.WriteLine("Total price > " + price);
             Console.WriteLine("Total gain > " + (price - cost));
 
@@ -36,9 +36,9 @@ namespace oscarblancarte.ipd.visitor{
             Console.WriteLine("\n:::::::: Pay the workers :::::::");
             PaymentProjectVisitor paymentVisitor = new PaymentProjectVisitor();
             project.accept(paymentVisitor);
-            List<EmployeePay> result = (List<EmployeePay>) paymentVisitor.getResult();
+            List<EmployeePay> result = (List<EmployeePay>) paymentVisitor.GetResult();
             foreach (EmployeePay pay in result) {
-                Console.WriteLine(pay.getEmployeeName() + " > " + pay.getTotalPay());
+                Console.WriteLine(pay.EmployeeName + " > " + pay.TotalPay);
             }
         }
     }

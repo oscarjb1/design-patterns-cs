@@ -7,20 +7,20 @@ using oscarblancarte.ipd.decorator.impl.message;
  */
 namespace oscarblancarte.ipd.decorator.impl.decorators{
     public abstract class MessageDecorator : IMessage {
-        protected IMessage message;
+        protected IMessage Message;
 
         public MessageDecorator(IMessage message) {
-            this.message = message;
+            this.Message = message;
         }
 
-        public void setContent(string content) {
-            message.setContent(content);
+        public void SetContent(string content) {
+            Message.SetContent(content);
         }
 
-        public string getContent() {
-            return message.getContent();
+        public string GetContent() {
+            return Message.GetContent();
         }
 
-        public abstract IMessage processMessage();
+        public abstract IMessage ProcessMessage();
     }
 }

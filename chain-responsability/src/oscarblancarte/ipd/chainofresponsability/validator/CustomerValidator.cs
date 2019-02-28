@@ -8,13 +8,13 @@ using oscarblancarte.ipd.chainofresponsability.domain.order;
 namespace oscarblancarte.ipd.chainofresponsability.validator{
     public class CustomerValidator : AbstractOrderValidator{
         
-        public override void validate(AbstractOrder order) {
-            foreach(AbstractOrderValidator validator in validators){
-                validator.validate(order);
+        public override void Validate(AbstractOrder order) {
+            foreach(AbstractOrderValidator validator in Validators){
+                validator.Validate(order);
             }
             //if (c.GetType() == typeof(TForm))
 
-            if(!(order.getContributor().GetType() == typeof(Customer)) ){
+            if(!(order.Contributor.GetType() == typeof(Customer)) ){
                 throw new ValidationException("The taxpayer is not a client");
             }
         }

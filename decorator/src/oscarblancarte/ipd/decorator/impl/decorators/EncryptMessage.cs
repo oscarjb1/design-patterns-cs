@@ -10,34 +10,19 @@ using System;
 namespace oscarblancarte.ipd.decorator.impl.decorators{
     public class EncryptMessage : MessageDecorator {
 
-        private string user;
-        private string password;
+        public string User{get; set;}
+        public string Password{get; set;}
 
         public EncryptMessage(string user, string password, IMessage message) : base(message) {
-            this.user = user;
-            this.password = password;
+            this.User = user;
+            this.Password = password;
         }
 
-        public string getUser() {
-            return user;
-        }
-
-        public void setUser(string user) {
-            this.user = user;
-        }
-
-        public string getPassword() {
-            return password;
-        }
-
-        public void setPassword(string password) {
-            this.password = password;
-        }
-
-        public override IMessage processMessage() {
-            this.message = message.processMessage();
+        
+        public override IMessage ProcessMessage() {
+            this.Message = Message.ProcessMessage();
             this.Encript();
-            return message;
+            return Message;
         }
 
         private IMessage Encript() {
@@ -45,16 +30,16 @@ namespace oscarblancarte.ipd.decorator.impl.decorators{
                 AesCryptoServiceProvider dataencrypt = new AesCryptoServiceProvider();  
                 dataencrypt.BlockSize = 128;  
                 dataencrypt.KeySize = 128;  
-                dataencrypt.Key = System.Text.Encoding.UTF8.GetBytes(this.password);  
-                dataencrypt.IV = System.Text.Encoding.UTF8.GetBytes(this.password);  
+                dataencrypt.Key = System.Text.Encoding.UTF8.GetBytes(this.Password);  
+                dataencrypt.IV = System.Text.Encoding.UTF8.GetBytes(this.Password);  
                 dataencrypt.Padding = PaddingMode.PKCS7;  
                 dataencrypt.Mode = CipherMode.CBC;  
                 ICryptoTransform crypto1 = dataencrypt.CreateEncryptor(dataencrypt.Key, dataencrypt.IV);  
-                byte[] encrypteddata = crypto1.TransformFinalBlock(Encoding.ASCII.GetBytes(this.message.getContent()), 0, this.message.getContent().Length);  
+                byte[] encrypteddata = crypto1.TransformFinalBlock(Encoding.ASCII.GetBytes(this.Message.GetContent()), 0, this.Message.GetContent().Length);  
                 crypto1.Dispose();  
                 string encryptedValue = Convert.ToBase64String(encrypteddata, 0, encrypteddata.Length);
-                message.setContent(encryptedValue);
-                return message;
+                Message.SetContent(encryptedValue);
+                return Message;
 
             } catch (Exception e) {
                 Console.WriteLine(e.ToString());

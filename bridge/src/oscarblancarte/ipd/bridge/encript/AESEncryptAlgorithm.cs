@@ -9,7 +9,7 @@ using System;
 namespace oscarblancarte.ipd.bridge.encript{
     public class AESEncryptAlgorithm : IEncryptAlgorithm {
 
-        public string encrypt(string message, string password)  {
+        public string Encrypt(string message, string password)  {
 
             AesCryptoServiceProvider dataencrypt = new AesCryptoServiceProvider();  
             dataencrypt.BlockSize = 128;  

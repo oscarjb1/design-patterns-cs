@@ -7,7 +7,7 @@ using System;
 namespace oscarblancarte.ipd.proxy.impl{
     public class DefaultProcessEjecutor : IProcessEjecutor {
 
-        public void ejecuteProcess(int idProcess,string user,string password)  {
+        public void EjecuteProcess(int idProcess,string user,string password)  {
             Console.WriteLine("processes " + idProcess + " in action");
             Console.WriteLine("processes " + idProcess + " finished");
         }

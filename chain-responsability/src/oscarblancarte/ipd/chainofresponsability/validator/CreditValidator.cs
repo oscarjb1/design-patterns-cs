@@ -8,11 +8,11 @@ using oscarblancarte.ipd.chainofresponsability.domain.order;
     namespace oscarblancarte.ipd.chainofresponsability.validator{
     public class CreditValidator : AbstractOrderValidator{
 
-        public override void validate(AbstractOrder order) {
+        public override void Validate(AbstractOrder order) {
             double total = order.getTotal();
-            CreditData creditData = order.getContributor().getCreditData();
-            double newBalance = creditData.getBalance() + total;
-            if(newBalance > creditData.getCreditLimit()){
+            CreditData creditData = order.Contributor.CreditData;
+            double newBalance = creditData.Balance + total;
+            if(newBalance > creditData.CreditLimit){
                 throw new ValidationException("The amount of the order  " + "exceeds the available credit limit");
             }
         }

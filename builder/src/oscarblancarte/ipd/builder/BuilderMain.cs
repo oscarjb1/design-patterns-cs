@@ -20,7 +20,7 @@ namespace oscarblancarte.ipd.builder{
                                 .addContacs("Jaime Blancarte", "3344556677", null, "Celular")
                                 .addPhones("4567890234", null, "Celular")
                                 .addPhones("7788990099", null, "Casa")
-                                .build();
+                                .Build();
                                 Console.WriteLine(emp);
                 }
         }

@@ -26,7 +26,7 @@ namespace oscarblancarte.ipd.visitor.domain{
 		public double Price { get; set; }
 
         public void accept(IVisitor visitor) {
-            visitor.employee(this);
+            visitor.Employee(this);
         }
 	}
 }

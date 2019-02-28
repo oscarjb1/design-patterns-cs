@@ -6,30 +6,12 @@ using System;
 namespace oscarblancarte.ipd.composite.products{
     public abstract class AbstractProduct {
 
-        protected string name;
-        protected double price;
+        public string Name{get; set;}
+        public double Price{get; set;}
 
         public AbstractProduct(string name, double price) {
-            this.name = name;
-            this.price = price;
-        }
-
-        public string getName() {
-            return name;
-        }
-
-        public void setName(string name) {
-            this.name = name;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        public void setPrice(double price) {
-            this.price = price;
+            this.Name = name;
+            this.Price = price;
         }
     }
 }
-
-

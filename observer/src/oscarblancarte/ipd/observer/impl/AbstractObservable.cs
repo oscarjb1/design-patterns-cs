@@ -7,19 +7,19 @@ using System.Collections.Generic;
 namespace oscarblancarte.ipd.observer.impl{
     public abstract class AbstractObservable : IObservable {
 
-        private readonly List<IObserver> observers = new List<IObserver>();
+        private readonly List<IObserver> Observers = new List<IObserver>();
 
-        public void addObserver(IObserver observer) {
-            this.observers.Add(observer);
+        public void AddObserver(IObserver observer) {
+            this.Observers.Add(observer);
         }
 
-        public void removeObserver(IObserver observer) {
-            this.observers.Remove(observer);
+        public void RemoveObserver(IObserver observer) {
+            this.Observers.Remove(observer);
         }
 
-        public void notifyAllObservers(string command, Object source) {
-            foreach (IObserver observer in observers) {
-                observer.notifyObserver(command, source);
+        public void NotifyAllObservers(string command, Object source) {
+            foreach (IObserver observer in Observers) {
+                observer.NotifyObserver(command, source);
             }
         }
     }

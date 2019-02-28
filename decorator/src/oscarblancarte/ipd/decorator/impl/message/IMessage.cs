@@ -7,8 +7,8 @@ using System;
 namespace oscarblancarte.ipd.decorator.impl.message{
     public interface IMessage {
         
-        IMessage processMessage();
-        string getContent();
-        void setContent(string content);
+        IMessage ProcessMessage();
+        string GetContent();
+        void SetContent(string content);
     }
 }

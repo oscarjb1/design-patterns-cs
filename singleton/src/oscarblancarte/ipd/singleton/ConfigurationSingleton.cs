@@ -7,55 +7,41 @@ using System.Collections.Specialized;
 namespace oscarblancarte.ipd.singleton{
     public class ConfigurationSingleton {
 
-        private static ConfigurationSingleton singleton;
+        private static ConfigurationSingleton Singleton;
 
         private static readonly string CONFIGURATION_PROP = "META-INF/Configuration.properties";
         
         private static readonly string APP_NAME_PROP = "appName";
         private static readonly string APP_VERSION_PROP = "appVersion";
 
-        private string appName;
-        private string appVersion;
+        public string AppName{get; set;}
+        public string AppVersion{get; set;}
 
         private ConfigurationSingleton() {
-            NameValueCollection props = PropertiesUtil.loadProperty();
+            NameValueCollection props = PropertiesUtil.LoadProperty();
 
-            this.appName = props[APP_NAME_PROP];
-            this.appVersion = props[APP_VERSION_PROP];
+            this.AppName = props[APP_NAME_PROP];
+            this.AppVersion = props[APP_VERSION_PROP];
         }
 
 
-        private static void createInstance(){
-            if(singleton ==null){
-                singleton = new ConfigurationSingleton();
+        private static void CreateInstance(){
+            if(Singleton ==null){
+                Singleton = new ConfigurationSingleton();
             }
         }
 
-        public static ConfigurationSingleton getInstance() {
-            if(singleton == null) {
-                createInstance();
+        public static ConfigurationSingleton GetInstance() {
+            if(Singleton == null) {
+                CreateInstance();
             }
-            return singleton;
+            return Singleton;
         }
 
-        public string getAppName() {
-            return appName;
-        }
-
-        public void setAppName(string appName) {
-            this.appName = appName;
-        }
-
-        public string getAppVersion() {
-            return appVersion;
-        }
-
-        public void setAppVersion(string appVersion) {
-            this.appVersion = appVersion;
-        }
+       
 
         public override string ToString() {
-            return "ConfigurationSingleton{" + "appName=" + appName + ", appVersion=" + appVersion + '}';
+            return "ConfigurationSingleton{" + "appName=" + AppName + ", appVersion=" + AppVersion + '}';
         }
     }
 }

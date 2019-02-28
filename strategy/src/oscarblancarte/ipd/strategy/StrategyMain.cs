@@ -9,10 +9,10 @@ using System;
 namespace oscarblancarte.ipd.strategy{
     public class StrategyMain {
 
-        private static AuthenticationProvider authProvider = new AuthenticationProvider();
+        private static AuthenticationProvider AuthProvider = new AuthenticationProvider();
 
         static void Main(string[] args) {
-            changeAuthetificationStrategy();
+            ChangeAuthetificationStrategy();
             Principal principal = null;
             do {
                 Console.WriteLine("\n\nPlease authenticate:");
@@ -21,7 +21,7 @@ namespace oscarblancarte.ipd.strategy{
                 Console.WriteLine("Pasword:");
                 string password = Console.ReadLine();
 
-                principal = authProvider.authenticate(userName, password);
+                principal = AuthProvider.Authenticate(userName, password);
                 if (principal == null) {
                     Console.WriteLine("User or password invalid.");
                     Console.WriteLine("Do you want to change the authentication method? (S/N)");
@@ -29,7 +29,7 @@ namespace oscarblancarte.ipd.strategy{
                     string op = Console.ReadLine();
 
                     if (string.Equals(op, "S", StringComparison.OrdinalIgnoreCase)) {
-                        changeAuthetificationStrategy();
+                        ChangeAuthetificationStrategy();
                     }
                 }
             } while (principal == null);
@@ -41,7 +41,7 @@ namespace oscarblancarte.ipd.strategy{
             
         }
 
-        private static void changeAuthetificationStrategy() {
+        private static void ChangeAuthetificationStrategy() {
             Console.WriteLine("Enter the type of authentication to use.");
             Console.WriteLine("1.-OnMemory Authentication");
             Console.WriteLine("2.-SQL Authentication");
@@ -49,15 +49,15 @@ namespace oscarblancarte.ipd.strategy{
             int op = int.Parse(Console.ReadLine());
             switch (op) {
                 case 1:
-                    authProvider.setAuthenticationStrategy(new OnMemoryAuthenticationProvider());
+                    AuthProvider.SetAuthenticationStrategy(new OnMemoryAuthenticationProvider());
                     Console.WriteLine("OnMemory Authentication Select >");
                     break;
                 case 2:
-                    authProvider.setAuthenticationStrategy(new SQLAuthenticationProvider());
+                    AuthProvider.SetAuthenticationStrategy(new SQLAuthenticationProvider());
                     Console.WriteLine("SQL Authentication Select >");
                     break;
                 case 3:
-                    authProvider.setAuthenticationStrategy(new XMLAuthenticationProvider());
+                    AuthProvider.SetAuthenticationStrategy(new XMLAuthenticationProvider());
                     Console.WriteLine("XML Authentication Select >");
                     break;
                 default:

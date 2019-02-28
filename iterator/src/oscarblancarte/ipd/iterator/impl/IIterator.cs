@@ -4,7 +4,7 @@
  */
 namespace oscarblancarte.ipd.iterator.impl{
     public interface IIterator<T> {
-         bool hasNext();
-        T next();
+         bool HasNext();
+        T Next();
     }
 }

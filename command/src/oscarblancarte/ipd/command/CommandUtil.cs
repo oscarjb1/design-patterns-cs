@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace oscarblancarte.ipd.command{
     public class CommandUtil {
 
-        public static string[] tokenizerArgs(string args) {
+        public static string[] TokenizerArgs(string args) {
             List<string> tokens = new List<string>();
             char[] charArray = args.ToCharArray();
 

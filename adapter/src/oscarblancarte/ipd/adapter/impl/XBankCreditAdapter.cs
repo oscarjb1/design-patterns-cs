@@ -13,14 +13,14 @@ namespace oscarblancarte.ipd.adapter.impl{
         public BankCreditResponse sendCreditRequest(BankCreditRequest request) {
             
             XBankCreditRequest xrequest = new XBankCreditRequest();
-            xrequest.setCustomerName(request.getCustomer());
-            xrequest.setRequestAmount(request.getAmount());
+            xrequest.CustomerNam = request.getCustomer();
+            xrequest.RequestAmount = request.getAmount();
             
             XBankCreditAPI api = new XBankCreditAPI();
             XBankCreditResponse xresponse = api.SendCreditRequest(xrequest);
             
             BankCreditResponse response = new BankCreditResponse();
-            response.setApproved(xresponse.isAproval());
+            response.setApproved(xresponse.Aproval);
             return response;
         }
     }

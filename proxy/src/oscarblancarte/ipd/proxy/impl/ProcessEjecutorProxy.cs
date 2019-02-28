@@ -7,17 +7,17 @@ using System;
 namespace oscarblancarte.ipd.proxy.impl{
     public class ProcessEjecutorProxy : IProcessEjecutor {
 
-        public void ejecuteProcess(int idProcess,string user,string password)  {
+        public void EjecuteProcess(int idProcess,string user,string password)  {
             SecurityService securityService = new SecurityService();
-            if(!securityService.authorization(user, password)){
+            if(!securityService.Authorization(user, password)){
                 throw new Exception("The user '" + user + "' does not have privileges to execute the process");
             }
             
             DefaultProcessEjecutor ejecutorProcess = new DefaultProcessEjecutor();
-            ejecutorProcess.ejecuteProcess(idProcess, user, password);
+            ejecutorProcess.EjecuteProcess(idProcess, user, password);
             
             AuditService audit = new AuditService();
-            audit.auditServiceUsed(user, typeof(DefaultProcessEjecutor).Name );
+            audit.AuditServiceUsed(user, typeof(DefaultProcessEjecutor).Name );
         }
     }
 }

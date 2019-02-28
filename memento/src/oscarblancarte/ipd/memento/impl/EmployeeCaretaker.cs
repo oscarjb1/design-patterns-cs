@@ -5,35 +5,35 @@ namespace oscarblancarte.ipd.memento.impl{
 
 
     public class EmployeeCaretaker {
-        private int currentIndex = -1;
+        private int CurrentIndex = -1;
         
-        private readonly List<EmployeeMemento> states = new List<EmployeeMemento>();
+        private readonly List<EmployeeMemento> States = new List<EmployeeMemento>();
 
         public void addNewMemento(EmployeeMemento m) {
-            states.Add(m);
-            currentIndex++;
+            States.Add(m);
+            CurrentIndex++;
         }
         public EmployeeMemento getCurrentMemento() {
-            return states[currentIndex];
+            return States[CurrentIndex];
         }
         
         public EmployeeMemento getNextMemento() {
-            int newIndex = currentIndex +1;
-            if( newIndex >= states.Count){
+            int newIndex = CurrentIndex +1;
+            if( newIndex >= States.Count){
                 return null;
             }
-            currentIndex = newIndex;
-            return states[currentIndex];
+            CurrentIndex = newIndex;
+            return States[CurrentIndex];
         }
         
         public EmployeeMemento getPreviousMemento() {
-            int newIndex = currentIndex-1;
+            int newIndex = CurrentIndex-1;
             
-            if(newIndex  <= -1 || newIndex >= states.Count-1){
+            if(newIndex  <= -1 || newIndex >= States.Count-1){
                 return null;
             }
-            currentIndex= newIndex;
-            return states[currentIndex];
+            CurrentIndex= newIndex;
+            return States[CurrentIndex];
         }
     }
 

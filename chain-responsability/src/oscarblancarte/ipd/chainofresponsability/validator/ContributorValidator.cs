@@ -8,12 +8,12 @@ using oscarblancarte.ipd.chainofresponsability.domain.order;
 namespace oscarblancarte.ipd.chainofresponsability.validator{
     public class ContributorValidator : AbstractOrderValidator{
         
-        public override void validate(AbstractOrder order)  {
-            foreach(AbstractOrderValidator validator in validators){
-                validator.validate(order);
+        public override void Validate(AbstractOrder order)  {
+            foreach(AbstractOrderValidator validator in Validators){
+                validator.Validate(order);
             }
-            Contributor contributor = order.getContributor();
-            if(Status.ACTIVO != contributor.getStatus()){
+            Contributor contributor = order.Contributor;
+            if(Status.ACTIVO != contributor.Status){
                 throw new ValidationException("The taxpayer is not active");
             }
         }

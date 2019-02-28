@@ -4,24 +4,24 @@
  */
 namespace oscarblancarte.ipd.chainofresponsability.validator{
     public class OrderValidatorBuilder {
-        public static AbstractOrderValidator buildSalesOrderValidator(){
+        public static AbstractOrderValidator BuildSalesOrderValidator(){
             AbstractOrderValidator validator = new SalesOrderValidator();
-            validator.addValidator(buildCustomerValidator());
-            validator.addValidator(new OrderItemValidator());
-            validator.addValidator(new CreditValidator());
+            validator.AddValidator(BuildCustomerValidator());
+            validator.AddValidator(new OrderItemValidator());
+            validator.AddValidator(new CreditValidator());
             return validator;
         }
         
-        private static AbstractOrderValidator buildCustomerValidator(){
+        private static AbstractOrderValidator BuildCustomerValidator(){
             AbstractOrderValidator validator = new CustomerValidator();
-            validator.addValidator(buildContributorValidator());
+            validator.AddValidator(BuildContributorValidator());
             return validator;
         }
         
-        private static AbstractOrderValidator buildContributorValidator(){
+        private static AbstractOrderValidator BuildContributorValidator(){
             AbstractOrderValidator validator = new ContributorValidator();
-            validator.addValidator(new AddressValidator());
-            validator.addValidator(new TelephoneValidator());
+            validator.AddValidator(new AddressValidator());
+            validator.AddValidator(new TelephoneValidator());
             return validator;
         }
     }

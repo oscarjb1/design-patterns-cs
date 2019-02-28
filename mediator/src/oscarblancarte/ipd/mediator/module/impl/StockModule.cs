@@ -8,32 +8,30 @@ namespace oscarblancarte.ipd.mediator.module.impl{
         public static readonly string MODULE_NAME = "Stock";
         public const string OPERATION_DECREMENT_STOCK = "DecrementStock";
 
-        public override string getModulName() {
+        public override string GetModulName() {
             return MODULE_NAME;
         }
 
-        public override Object notifyMessage(ModuleMessage message) {
-            switch (message.getMessageType()) {
+        public override Object NotifyMessage(ModuleMessage message) {
+            switch (message.MessageType ){
                 case OPERATION_DECREMENT_STOCK:
                     return decrementStock(message);
                 default:
-                    throw new SystemException("Operation not supported '" + message.getMessageType() + "'");
+                    throw new SystemException("Operation not supported '" + message.MessageType + "'");
             }
         }
 
         private Object decrementStock(ModuleMessage message) {
-            SaleOrder saleOrder = (SaleOrder) message.getPayload();
-            foreach(Product product in saleOrder.getProductos()) {
-                Console.WriteLine("decrement product > " + product.getName());
+            SaleOrder saleOrder = (SaleOrder) message.Payload;
+            foreach(Product product in saleOrder.Productos) {
+                Console.WriteLine("decrement product > " + product.Name);
             }
             
             ProductRequest productRequest = new ProductRequest();
-            productRequest.setProducts(saleOrder.getProductos());
+            productRequest.Products = saleOrder.Productos;
             
-            ModuleMessage purchaseMessage = new ModuleMessage(MODULE_NAME, 
-                    PurchaseModule.MODULE_NAME, 
-                    PurchaseModule.OPERATION_PURCHASE_REQUEST, productRequest);
-            mediator.mediate(purchaseMessage);
+            ModuleMessage purchaseMessage = new ModuleMessage(MODULE_NAME, PurchaseModule.MODULE_NAME, PurchaseModule.OPERATION_PURCHASE_REQUEST, productRequest);
+            Mediator.Mediate(purchaseMessage);
             return null;
             
         }

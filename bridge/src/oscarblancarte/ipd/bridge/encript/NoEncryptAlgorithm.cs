@@ -4,7 +4,7 @@
  */
 namespace oscarblancarte.ipd.bridge.encript{
     public class NoEncryptAlgorithm : IEncryptAlgorithm{
-        public string encrypt(string message, string password)  {
+        public string Encrypt(string message, string password)  {
             return message;
         }
     }

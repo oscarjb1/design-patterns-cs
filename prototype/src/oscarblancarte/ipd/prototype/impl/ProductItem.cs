@@ -4,43 +4,27 @@
  */
 namespace oscarblancarte.ipd.prototype.impl{
     public class ProductItem : IPrototype {
-        private string name;
-        private double price;
+        public string Name{get; set;}
+        public double Price{get; set;}
         
         public ProductItem(){
         }
 
         public ProductItem(string name, double price) {
-            this.name = name;
-            this.price = price;
+            this.Name = name;
+            this.Price = price;
         }
 
-        public string getName() {
-            return name;
+        public IPrototype Clone() {
+            return new ProductItem(this.Name,this.Price);
         }
 
-        public void setName(string name) {
-            this.name = name;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        public void setPrice(double price) {
-            this.price = price;
-        }
-
-        public IPrototype clone() {
-            return new ProductItem(this.name,this.price);
-        }
-
-        public IPrototype deepClone() {
-            return clone();
+        public IPrototype DeepClone() {
+            return Clone();
         }
 
         public override string ToString() {
-            return "ProductItem{" + "name=" + name + ", price=" + price + '}';
+            return "ProductItem{" + "name=" + Name + ", price=" + Price + '}';
         }
     }
 }

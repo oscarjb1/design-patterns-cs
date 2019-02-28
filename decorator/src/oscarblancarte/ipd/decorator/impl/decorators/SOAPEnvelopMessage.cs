@@ -12,24 +12,24 @@ namespace oscarblancarte.ipd.decorator.impl.decorators{
             
         }
 
-        public override IMessage processMessage() {
-            message.processMessage();
-            message =  envelopMessage();
-            return message;
+        public override IMessage ProcessMessage() {
+            Message.ProcessMessage();
+            Message =  EnvelopMessage();
+            return Message;
         }
 
-        private IMessage envelopMessage() {
+        private IMessage EnvelopMessage() {
             string soap = "<soapenv:Envelope xmlns:soapenv="
                     + "\n\"http://schemas.xmlsoap.org/soap/envelope/\" "
                     + "\nxmlns:ser=\"http://service.dishweb.cl.com/\">\n"
                     + "   <soapenv:Header/>\n"
                     + "   <soapenv:Body>\n"
-                    + message.getContent()
+                    + Message.GetContent()
                     + "\n"
                     + "   </soapenv:Body>\n"
                     + "</soapenv:Envelope>";
-            message.setContent(soap);
-            return message;
+            Message.SetContent(soap);
+            return Message;
         }
 
     }

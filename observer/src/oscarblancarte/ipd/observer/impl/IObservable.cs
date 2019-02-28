@@ -7,11 +7,11 @@ using System;
 namespace oscarblancarte.ipd.observer.impl{
     public interface IObservable {
 
-        void addObserver(IObserver observer);
+        void AddObserver(IObserver observer);
 
-        void removeObserver(IObserver observer);
+        void RemoveObserver(IObserver observer);
 
-        void notifyAllObservers(string command, Object source);
+        void NotifyAllObservers(string command, Object source);
     }
 }
 

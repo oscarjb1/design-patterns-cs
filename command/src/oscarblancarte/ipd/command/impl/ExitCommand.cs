@@ -9,11 +9,11 @@ namespace oscarblancarte.ipd.command.impl{
 
         public static readonly string COMMAND_NAME = "exit";
 
-        public string getCommandName() {
+        public string GetCommandName() {
             return COMMAND_NAME;
         }
 
-        public void execute(string[] args, StreamWriter output) {
+        public void Execute(string[] args, StreamWriter output) {
             Environment.Exit(0);
         }
     }

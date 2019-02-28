@@ -942,11 +942,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Desarrollo\\pattern-book\\builder\\builder.csproj",
+      "projectUniqueName": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\builder\\builder.csproj",
       "projectName": "builder",
-      "projectPath": "C:\\Desarrollo\\pattern-book\\builder\\builder.csproj",
+      "projectPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\builder\\builder.csproj",
       "packagesPath": "C:\\Users\\Oscar\\.nuget\\packages\\",
-      "outputPath": "C:\\Desarrollo\\pattern-book\\builder\\obj\\",
+      "outputPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\builder\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

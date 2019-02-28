@@ -11,7 +11,7 @@ namespace oscarblancarte.ipd.bridge.encript{
 
     public class DESEncryptAlgorithm : IEncryptAlgorithm{
 
-        public string encrypt(string message, string password)  {
+        public string Encrypt(string message, string password)  {
             byte[] inputArray = UTF8Encoding.UTF8.GetBytes(message);
             TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
             tripleDES.Key = UTF8Encoding.UTF8.GetBytes(password);

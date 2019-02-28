@@ -7,24 +7,24 @@ namespace oscarblancarte.ipd.visitor.impl{
 
         private double totalPrice;
 
-        public void project(Project project) {
+        public void Project(Project project) {
             foreach (Activitie act in project.Activities) {
                 act.accept(this);
             }
         }
 
-        public void activitie(oscarblancarte.ipd.visitor.domain.Activitie activitie) {
+        public void Activitie(oscarblancarte.ipd.visitor.domain.Activitie activitie) {
             totalPrice += activitie.Price;
             foreach (Activitie act in activitie.Activities) {
                 act.accept(this);
             }
         }
 
-        public void employee(Employee employee) {
+        public void Employee(Employee employee) {
             // Not Interesting for this Visitor  
         }
 
-        public Object getResult() {
+        public Object GetResult() {
             return totalPrice;
         }
     }

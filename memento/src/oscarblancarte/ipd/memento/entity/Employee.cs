@@ -3,43 +3,20 @@ using System;
 
 namespace oscarblancarte.ipd.memento.entity{
     public class Employee : ICloneable {
-        private string name;
-        private string lastName;
-        private string employeeNumber;
+        public string Name{get; set;}
+        public string LastName{get; set;}
+        public string EmployeeNumber{get; set;}
 
-        public Employee(string name, string lastName, string employeeNumber) {
-            this.name = name;
-            this.lastName = lastName;
-            this.employeeNumber = employeeNumber;
+        public Employee(){
+
         }
 
-        public Employee() {
-        }
-        
-        public string getName() {
-            return name;
-        }
-
-        public void setName(string name) {
-            this.name = name;
+        public Employee(string Name, string LastName, string EmployeeNumber) {
+            this.Name = Name;
+            this.LastName = LastName;
+            this.EmployeeNumber = EmployeeNumber;
         }
 
-        public string getLastName() {
-            return lastName;
-        }
-
-        public void setLastName(string lastName) {
-            this.lastName = lastName;
-        }
-
-        public string getEmployeeNumber() {
-            return employeeNumber;
-        }
-
-        public void setEmployeeNumber(string employeeNumber) {
-            this.employeeNumber = employeeNumber;
-        }
-        
         public EmployeeMemento createMemento(){
             try {
                 return new EmployeeMemento((Employee)this.Clone());
@@ -50,9 +27,9 @@ namespace oscarblancarte.ipd.memento.entity{
         
         public void restoreMemento(EmployeeMemento memento){
             Employee employee = memento.getMemento();
-            this.name = employee.name;
-            this.lastName = employee.name;
-            this.employeeNumber = employee.employeeNumber;
+            this.Name = employee.Name;
+            this.LastName = employee.LastName;
+            this.EmployeeNumber = employee.EmployeeNumber;
         }
 
         public object Clone()

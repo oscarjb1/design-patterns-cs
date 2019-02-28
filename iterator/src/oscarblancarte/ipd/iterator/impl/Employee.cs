@@ -11,18 +11,18 @@ namespace oscarblancarte.ipd.iterator.impl{
 
     public class Employee : IContainer<Employee> {
 
-        private String name;
-        private String role;
-        private List<Employee> subordinates;
+        public String Name{get; set;}
+        public String Role{get; set;}
+        public List<Employee> Subordinates{get; set;}
 
         public Employee(String role, String puesto, params Employee[] subordinates) {
-            this.name = role;
-            this.role = puesto;
-            this.subordinates = subordinates.OfType<Employee>().ToList();
+            this.Name = role;
+            this.Role = puesto;
+            this.Subordinates = subordinates.OfType<Employee>().ToList();
             
         }
 
-        public IIterator<Employee> createIterator() {
+        public IIterator<Employee> CreateIterator() {
             return new TreeEmployeeIterator(this);
         }
 
@@ -32,39 +32,15 @@ namespace oscarblancarte.ipd.iterator.impl{
 
         
 
-        public String getRole() {
-            return name;
-        }
-
-        public void setRole(String name) {
-            this.name = name;
-        }
-
-        public String getPuesto() {
-            return role;
-        }
-
-        public void setPuesto(String puesto) {
-            this.role = puesto;
-        }
-
-        public List<Employee> getSubordinates() {
-            return subordinates;
-        }
-
-        public void setSubordinates(List<Employee> subordinates) {
-            this.subordinates = subordinates;
-        }
-
         public void addSubordinate(Employee subordinate) {
             if (subordinate == null) {
-                subordinates = new List<Employee>();
+                Subordinates = new List<Employee>();
             }
-            subordinates.Add(subordinate);
+            Subordinates.Add(subordinate);
         }
 
         public override string ToString() {
-            return "Employee{" + "name=" + name + ", role=" + role + '}';
+            return "Employee{" + "name=" + Name + ", role=" + Role + '}';
         }
 
         private class TreeEmployeeIterator : IIterator<Employee> {
@@ -81,14 +57,14 @@ namespace oscarblancarte.ipd.iterator.impl{
 
             public void addRecursive(Employee employee) {
                 list.Add(employee);
-                if (employee.getSubordinates() != null) {
-                    foreach (Employee subordinate in employee.getSubordinates()) {
+                if (employee.Subordinates != null) {
+                    foreach (Employee subordinate in employee.Subordinates) {
                         addRecursive(subordinate);
                     }
                 }
             }
 
-            public bool hasNext() {
+            public bool HasNext() {
                 if (list.Count == 0) {
                     return false;
                 }
@@ -96,8 +72,8 @@ namespace oscarblancarte.ipd.iterator.impl{
                 return index < list.Count;
             }
 
-            public Employee next() {
-                if (!hasNext()) {
+            public Employee Next() {
+                if (!HasNext()) {
                     throw new SystemException("there are no more elements");
                 }
                 return list[index++];

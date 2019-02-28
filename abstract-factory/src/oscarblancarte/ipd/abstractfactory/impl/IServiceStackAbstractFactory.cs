@@ -9,8 +9,8 @@ using oscarblancarte.ipd.abstractfactory.service;
 
 namespace oscarblancarte.ipd.abstractfactory.impl {
     public interface IServiceStackAbstractFactory {
-        IEmployeeService getEmployeeService();
-        IProductsService getProductsService();
+        IEmployeeService GetEmployeeService();
+        IProductsService GetProductsService();
     }
 }
 

@@ -3,7 +3,7 @@
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "Microsoft.NETCore.App/2.2.0": {
-        "type": "namespace",
+        "type": "package",
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.2.0",
           "Microsoft.NETCore.Platforms": "2.2.0",
@@ -161,22 +161,22 @@
         }
       },
       "Microsoft.NETCore.DotNetAppHost/2.2.0": {
-        "type": "namespace"
+        "type": "package"
       },
       "Microsoft.NETCore.DotNetHostPolicy/2.2.0": {
-        "type": "namespace",
+        "type": "package",
         "dependencies": {
           "Microsoft.NETCore.DotNetHostResolver": "2.2.0"
         }
       },
       "Microsoft.NETCore.DotNetHostResolver/2.2.0": {
-        "type": "namespace",
+        "type": "package",
         "dependencies": {
           "Microsoft.NETCore.DotNetAppHost": "2.2.0"
         }
       },
       "Microsoft.NETCore.Platforms/2.2.0": {
-        "type": "namespace",
+        "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
         },
@@ -185,7 +185,7 @@
         }
       },
       "Microsoft.NETCore.Targets/2.0.0": {
-        "type": "namespace",
+        "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
         },
@@ -194,7 +194,7 @@
         }
       },
       "NETStandard.Library/2.0.3": {
-        "type": "namespace",
+        "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
         },
@@ -213,7 +213,7 @@
   "libraries": {
     "Microsoft.NETCore.App/2.2.0": {
       "sha512": "QU8taCyeyePwatrj+h+750lMnsPCq3YPaGmsdtSHXPCjDyjto2KT7QDNVet0oRliX4PjaINpyg0Yzd9DnQ/Wkw==",
-      "type": "namespace",
+      "type": "package",
       "path": "microsoft.netcore.app/2.2.0",
       "files": [
         ".nupkg.metadata",
@@ -478,7 +478,7 @@
     },
     "Microsoft.NETCore.DotNetAppHost/2.2.0": {
       "sha512": "qIrVLupwT2NYTrf7KM7Nh+mJr36V5MITVRjyGOByVVCwGmQgQmI/6bjZYQv+QdExi4Cm87eCKJX9FdT6nc00Xg==",
-      "type": "namespace",
+      "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.2.0",
       "files": [
         ".nupkg.metadata",
@@ -492,7 +492,7 @@
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.2.0": {
       "sha512": "5Xvh/3bDr6YAl6TKfeONvRDZ9QOmvVmzFzA0M6g8uubWdf5/o6qdVOqByFBT/fhjVb6okP0E5+v1oxh1Pk+c+w==",
-      "type": "namespace",
+      "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.2.0",
       "files": [
         ".nupkg.metadata",
@@ -506,7 +506,7 @@
     },
     "Microsoft.NETCore.DotNetHostResolver/2.2.0": {
       "sha512": "Q3j3KC2ugqIVasf7pO4NRDEn7GysZX3ZH6fAHfbjrP8cYXY9cmHeFcbaniw36q8kFhsPt2EnRHzSsLBpbG6l2Q==",
-      "type": "namespace",
+      "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.2.0",
       "files": [
         ".nupkg.metadata",
@@ -520,7 +520,7 @@
     },
     "Microsoft.NETCore.Platforms/2.2.0": {
       "sha512": "39+GVHdbm+cmoOjdvm+fhiMbddnuVyUlBdYS8Yhn5xsNaBoTXpgBsxQQlI2Sv9EjIP0F+itG6yrDaOM2OEGupQ==",
-      "type": "namespace",
+      "type": "package",
       "path": "microsoft.netcore.platforms/2.2.0",
       "files": [
         ".nupkg.metadata",
@@ -537,7 +537,7 @@
     },
     "Microsoft.NETCore.Targets/2.0.0": {
       "sha512": "odP/tJj1z6GylFpNo7pMtbd/xQgTC3Ex2If63dRTL38bBNMwsBnJ+RceUIyHdRBC0oik/3NehYT+oECwBhIM3Q==",
-      "type": "namespace",
+      "type": "package",
       "path": "microsoft.netcore.targets/2.0.0",
       "files": [
         ".nupkg.metadata",
@@ -553,7 +553,7 @@
     },
     "NETStandard.Library/2.0.3": {
       "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
-      "type": "namespace",
+      "type": "package",
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
@@ -685,8 +685,8 @@
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
-  "namespaceFolders": {
-    "C:\\Users\\Oscar\\.nuget\\namespaces\\": {},
+  "packageFolders": {
+    "C:\\Users\\Oscar\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -695,9 +695,9 @@
       "projectUniqueName": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\object-pool\\object-pool.csproj",
       "projectName": "object-pool",
       "projectPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\object-pool\\object-pool.csproj",
-      "namespacesPath": "C:\\Users\\Oscar\\.nuget\\namespaces\\",
+      "packagesPath": "C:\\Users\\Oscar\\.nuget\\packages\\",
       "outputPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\object-pool\\obj\\",
-      "projectStyle": "namespaceReference",
+      "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
@@ -726,7 +726,7 @@
         "dependencies": {
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
-            "target": "namespace",
+            "target": "Package",
             "version": "[2.2.0, )",
             "autoReferenced": true
           }

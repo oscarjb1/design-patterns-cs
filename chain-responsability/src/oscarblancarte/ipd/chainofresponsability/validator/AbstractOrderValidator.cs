@@ -9,12 +9,12 @@ using System.Collections.Generic;
 namespace oscarblancarte.ipd.chainofresponsability.validator{
     public abstract class AbstractOrderValidator {
         
-        protected List<AbstractOrderValidator> validators = new List<AbstractOrderValidator>();
+        protected List<AbstractOrderValidator> Validators = new List<AbstractOrderValidator>();
         
-        public abstract void validate(AbstractOrder order) ;
+        public abstract void Validate(AbstractOrder order) ;
         
-        public void addValidator(AbstractOrderValidator validator){
-            validators.Add(validator);
+        public void AddValidator(AbstractOrderValidator validator){
+            Validators.Add(validator);
         }
     }
 }

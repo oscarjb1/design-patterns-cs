@@ -9,45 +9,13 @@ namespace oscarblancarte.ipd.chainofresponsability.domain.order
 {
     public class OrderItem
     {
-
-        private Product product;
-        private double price;
-        private float quantity;
-
-        public float getQuantity()
-        {
-            return quantity;
-        }
-
-        public void setQuantity(float quantity)
-        {
-            this.quantity = quantity;
-        }
-
-        public Product getProduct()
-        {
-            return product;
-        }
-
-        public void setProduct(Product product)
-        {
-            this.product = product;
-        }
-
-        public double getPrice()
-        {
-            return price;
-        }
-
-        public void setPrice(double price)
-        {
-            this.price = price;
-        }
+        public Product Product{get; set;}
+        public double Price{get; set;}
+        public float Quantity{get; set;}
 
         public double getTotal()
         {
-            return price * quantity;
+            return Price * Quantity;
         }
     }
-
 }

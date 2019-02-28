@@ -7,15 +7,15 @@ using System;
 namespace oscarblancarte.ipd.interprete.sql.terminal{
     public class TextExpression : LiteralExpression {
 
-        public TextExpression(string literal) : base(literal){
+        public TextExpression(string Literal) : base(Literal){
         }
         
-        public override Object interpret(Context context) {
-            return literal;
+        public override Object Interpret(Context Context) {
+            return Literal;
         }
 
         public override string ToString() {
-            return "'"+literal+"'";
+            return "'"+Literal+"'";
         }
     }
 

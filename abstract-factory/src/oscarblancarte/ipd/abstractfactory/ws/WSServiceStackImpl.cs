@@ -8,11 +8,11 @@ using oscarblancarte.ipd.abstractfactory.service;
 namespace oscarblancarte.ipd.abstractfactory.ws{
     public class WSServiceStackImpl : IServiceStackAbstractFactory{
 
-       public IEmployeeService getEmployeeService() {
+       public IEmployeeService GetEmployeeService() {
             return new EmployeeServiceWSImpl();
         }
 
-        public IProductsService getProductsService() {
+        public IProductsService GetProductsService() {
             return new ProductServiceWSImpl();
         }
     }

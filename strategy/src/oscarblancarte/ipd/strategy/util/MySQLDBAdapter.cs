@@ -16,9 +16,9 @@ namespace oscarblancarte.ipd.strategy.util{
         private static readonly string DB_PORT_PROP = "port";
         private static readonly string DB_USER_PROP = "user";
 
-        public DbConnection getConnection() {
+        public DbConnection GetConnection() {
             try {
-                string connectionString = createConnectionString();
+                string connectionString = CreateConnectionString();
                 DbConnection connection = new MySqlConnection(connectionString);
                 connection.Open();
                 Console.WriteLine("Connection class ==> " + typeof(MySqlConnection).Name);
@@ -29,8 +29,8 @@ namespace oscarblancarte.ipd.strategy.util{
             }
         }
 
-        private string createConnectionString() {
-            NameValueCollection props = PropertiesUtil.loadProperty();
+        private string CreateConnectionString() {
+            NameValueCollection props = PropertiesUtil.LoadProperty();
             //string factoryClass = ConfigurationManager.AppSettings["serviceProductImplClass"].ToString();
             string host = props[DB_HOST_PROP];
             string port = props[DB_PORT_PROP];

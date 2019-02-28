@@ -1,62 +1,74 @@
-using java.sql.Connection;
-using java.sql.PreparedStatement;
-using java.sql.ResultSet;
 using oscarblancarte.ipd.factorymethod;
 using oscarblancarte.ipd.factorymethod.entity;
 using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 
 namespace oscarblancarte.ipd.factorymethod.dao{
 
     public class ProductDAO {
         
-        private IDBAdapter dbAdapter;
+        private IDBAdapter DbAdapter;
         
         public ProductDAO(){
-            dbAdapter = DBFactory.getDefaultDBAdapter();
+            DbAdapter = DBFactory.GetDefaultDBAdapter();
         }
         
-        public List<Product> findAllProducts(){
-            Connection connection = dbAdapter.getConnection();
-            List<Product> productList = new ArrayList<>();
+        public List<Product> FindAllProducts(){
+            IDbConnection connection = DbAdapter.GetConnection();
+            List<Product> productList = new List<Product>();
             try {
-                PreparedStatement statement = connection.prepareStatement("SELECT idProductos, productName, productPrice FROM Productos");
-                ResultSet results = statement.executeQuery();
-                while(results.next()){
-                    productList.add(new Product(results.getLong(1), results.getString(2), results.getDouble(3)));
+                IDbCommand statement = connection.CreateCommand();
+                statement.CommandText = "SELECT idProductos, productName, productPrice FROM Productos";
+                statement.CommandType = CommandType.Text;
+
+                IDataReader query = statement.ExecuteReader();
+
+                while(query.Read()){
+                    productList.Add(new Product((Int32)query["idProductos"], (string)query["productName"], (Int32)query["productPrice"]));
                 }
+                query.Close();
+                connection.Close();
                 return productList;
+
             } catch (Exception e) {
                 Console.WriteLine(e.ToString());
                 return null;
-            }finally{
-                try {
-                    connection.close();
-                } catch (Exception e) {}
             }
         }
         
-        public boolean saveProduct(Product product){
-            Connection connection = dbAdapter.getConnection();
+        public bool SaveProduct(Product product){
+            IDbConnection connection = DbAdapter.GetConnection();
             try {
-                PreparedStatement statement = connection
-                        .prepareStatement("INSERT INTO Productos(idProductos,"
-                                + "productName,productPrice) VALUES (?,?,?)");
-                statement.setLong(1, product.getIdProduct());
-                statement.setString(2, product.getProductName());
-                statement.setDouble(3, product.getPrice());
-                statement.executeUpdate();
+                IDbCommand statement = connection.CreateCommand();
+                //PreparedStatement statement = connection.prepareStatement("INSERT INTO Productos(idProductos," + "productName,productPrice) VALUES (?,?,?)");
+                statement.CommandText = "INSERT INTO Productos(idProductos, productName, productPrice) VALUES (?idProductos, ?productName, ?productPrice)";
+                statement.CommandType = CommandType.Text;
+
+                IDbDataParameter idProdParam = statement.CreateParameter();
+                idProdParam.ParameterName = "idProductos";
+                idProdParam.Value = product.IdProduct;
+
+                IDbDataParameter nameProdParam = statement.CreateParameter();
+                nameProdParam.ParameterName = "productName";
+                nameProdParam.Value = product.ProductName;
+
+                IDbDataParameter priceProdParam = statement.CreateParameter();
+                priceProdParam.ParameterName = "productPrice";
+                priceProdParam.Value = product.Price;
+
+                statement.Parameters.Add(idProdParam);
+                statement.Parameters.Add(nameProdParam);
+                statement.Parameters.Add(priceProdParam);
+
+                statement.ExecuteNonQuery();
+
                 return true;
             } catch (Exception e) {
-                e.printStackTrace();
+                Console.WriteLine(e.ToString());
                 return false;
-            }finally{
-                try {
-                    connection.close();
-                } catch (Exception e) {}
             }
         }
-        
     }
 }
-
-

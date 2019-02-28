@@ -13,62 +13,62 @@ namespace oscarblancarte.ipd.objectpool.impl{
         where T: IPooledObject
     {
 
-        private readonly int minInstances;
-        private readonly int maxInstances;
-        private readonly int waitTime;
+        private readonly int MinInstances;
+        private readonly int MaxInstances;
+        private readonly int WaitTime;
 
-        private readonly IPoolableObjectFactory<T> poolableObjectFactory;
+        private readonly IPoolableObjectFactory<T> PoolableObjectFactory;
 
-        private readonly List<PooledObjectStatus<T>> fullStack = new List<PooledObjectStatus<T>>();
-        private readonly List<PooledObjectStatus<T>> useStack = new List<PooledObjectStatus<T>>();
-        private readonly Stack<PooledObjectStatus<T>> freeStack = new Stack<PooledObjectStatus<T>>();
+        private readonly List<PooledObjectStatus<T>> FullStack = new List<PooledObjectStatus<T>>();
+        private readonly List<PooledObjectStatus<T>> UseStack = new List<PooledObjectStatus<T>>();
+        private readonly Stack<PooledObjectStatus<T>> FreeStack = new Stack<PooledObjectStatus<T>>();
 
         public AbstractObjectPool(int minInstances, int maxInstances, int waitTime , IPoolableObjectFactory<T> poolableObjectFactory) {
             Console.WriteLine("=========== STARTING ============");
-            this.minInstances = minInstances;
-            this.maxInstances = maxInstances;
-            this.waitTime = waitTime;
-            this.poolableObjectFactory = poolableObjectFactory;
-            initPool();
+            this.MinInstances = minInstances;
+            this.MaxInstances = maxInstances;
+            this.WaitTime = waitTime;
+            this.PoolableObjectFactory = poolableObjectFactory;
+            InitPool();
             Console.WriteLine("=========== FINISH ============");
             Console.WriteLine();
         }
 
-        private void initPool() {
-            for (int c = fullStack.Count ; c < minInstances; c++) {
+        private void InitPool() {
+            for (int c = FullStack.Count ; c < MinInstances; c++) {
                 PooledObjectStatus<T> createNewPooledObject = CreateNewPooledObject();
-                freeStack.Push(createNewPooledObject);
+                FreeStack.Push(createNewPooledObject);
             }
         }
 
         private class PooledObjectStatus<T> {
-            public bool used;
-            public Guid uuid;
-            public T pooledObject;
+            public bool Used;
+            public Guid Uuid;
+            public T PooledObject;
 
             public PooledObjectStatus(T pooledObject) {
-                this.used = false;
-                this.uuid = System.Guid.NewGuid();
-                this.pooledObject = pooledObject;
+                this.Used = false;
+                this.Uuid = System.Guid.NewGuid();
+                this.PooledObject = pooledObject;
             }
         }
 
-        private T getInternalObject()  {
-            lock (freeStack) {
-                if (! (freeStack.Count == 0)) {
-                    PooledObjectStatus<T> first = this.freeStack.Pop();
-                    first.used = true;
-                    Console.WriteLine("Provisioning Object > " + first.uuid.ToString());
-                    useStack.Add(first);
-                    return first.pooledObject;
+        private T GetInternalObject()  {
+            lock (FreeStack) {
+                if (! (FreeStack.Count == 0)) {
+                    PooledObjectStatus<T> first = this.FreeStack.Pop();
+                    first.Used = true;
+                    Console.WriteLine("Provisioning Object > " + first.Uuid.ToString());
+                    UseStack.Add(first);
+                    return first.PooledObject;
                 }
-                lock (fullStack) {
-                    if (fullStack.Count < maxInstances) {
+                lock (FullStack) {
+                    if (FullStack.Count < MaxInstances) {
                         PooledObjectStatus<T> returnObject = CreateNewPooledObject();
-                        returnObject.used = true;
-                        Console.WriteLine("Provisioning Object > " + returnObject.uuid.ToString());
-                        useStack.Add(returnObject);
-                        return returnObject.pooledObject;
+                        returnObject.Used = true;
+                        Console.WriteLine("Provisioning Object > " + returnObject.Uuid.ToString());
+                        UseStack.Add(returnObject);
+                        return returnObject.PooledObject;
                     } else {
                         return default(T);
                     }
@@ -76,32 +76,31 @@ namespace oscarblancarte.ipd.objectpool.impl{
             }
         }
 
-        public T getObject()  {
-            T internalObject = getInternalObject();
+        public T GetObject()  {
+            T internalObject = GetInternalObject();
             if (internalObject != null) {
                 return internalObject;
             }
-            return waitForResource();
+            return WaitForResource();
         }
 
-        private T waitForResource()  {
-            DateTime future = DateTime.Now.AddMilliseconds(waitTime);
+        private T WaitForResource()  {
+            DateTime future = DateTime.Now.AddMilliseconds(WaitTime);
             do {
                 PooledObjectStatus<T> returnObject = null;
-                lock (freeStack) {
-                    if (!(freeStack.Count == 0) && !freeStack.Peek().used) {
-                        returnObject = freeStack.Pop();
-                        returnObject.used = true;
-                        useStack.Add(returnObject);
-                        Console.WriteLine("Provisioning Object > " + returnObject.uuid.ToString());
-                        return returnObject.pooledObject;
+                lock (FreeStack) {
+                    if (!(FreeStack.Count == 0) && !FreeStack.Peek().Used) {
+                        returnObject = FreeStack.Pop();
+                        returnObject.Used = true;
+                        UseStack.Add(returnObject);
+                        Console.WriteLine("Provisioning Object > " + returnObject.Uuid.ToString());
+                        return returnObject.PooledObject;
                     }
                 }
 
-                if (returnObject == null || returnObject.used) {
+                if (returnObject == null || returnObject.Used) {
                     long milliseconds = DateTimeOffset.Now.ToUnixTimeMilliseconds();
-                    if (waitTime != 0 && milliseconds
-                            >= future.Millisecond) {
+                    if (WaitTime != 0 && milliseconds >= future.Millisecond) {
                         throw new PoolException("Tiempo de espera agotado");
                     }
                     try {
@@ -115,30 +114,30 @@ namespace oscarblancarte.ipd.objectpool.impl{
         }
 
         private PooledObjectStatus<T> CreateNewPooledObject() {
-            T newObject = poolableObjectFactory.createNew();
+            T newObject = PoolableObjectFactory.CreateNew();
             PooledObjectStatus<T> pooled = new PooledObjectStatus<T>(newObject);
-            fullStack.Add(pooled);
-            Console.WriteLine("New PoolableObject{UUID=" + pooled.uuid.ToString() + ", poolSize=" + fullStack.Count + "}");
+            FullStack.Add(pooled);
+            Console.WriteLine("New PoolableObject{UUID=" + pooled.Uuid.ToString() + ", poolSize=" + FullStack.Count + "}");
             return pooled;
         }
 
-        public void releaceObject(T pooledObject) 
+        public void ReleaceObject(T pooledObject) 
         {
-            foreach(PooledObjectStatus<T> item in this.fullStack) {
-                if (item.pooledObject.Equals(pooledObject) ) {
-                    if (pooledObject.validate()) {
-                        freeStack.Push(item);
-                        useStack.Remove(item);
-                        item.used = false;
-                        Console.WriteLine("Object returned > " + item.uuid.ToString());
+            foreach(PooledObjectStatus<T> item in this.FullStack) {
+                if (item.PooledObject.Equals(pooledObject) ) {
+                    if (pooledObject.Validate()) {
+                        FreeStack.Push(item);
+                        UseStack.Remove(item);
+                        item.Used = false;
+                        Console.WriteLine("Object returned > " + item.Uuid.ToString());
                         return;
                     } else {
-                        Console.WriteLine("Object Invalidate ==> " + item.uuid.ToString());
+                        Console.WriteLine("Object Invalidate ==> " + item.Uuid.ToString());
                         pooledObject.Invalidate();
-                        fullStack.Remove(item);
-                        useStack.Remove(item);
-                        lock(freeStack){
-                            initPool();
+                        FullStack.Remove(item);
+                        UseStack.Remove(item);
+                        lock(FreeStack){
+                            InitPool();
                         }
                         return;
                     }
@@ -148,8 +147,8 @@ namespace oscarblancarte.ipd.objectpool.impl{
 
         public override String ToString() {
             return "AbstractObjectPool ==> currentSize > '"
-                    +fullStack.Count  +"', " + "free > '"
-                    +freeStack.Count +"', used > '"+useStack.Count+"'";
+                    +FullStack.Count  +"', " + "free > '"
+                    +FreeStack.Count +"', used > '"+UseStack.Count+"'";
         }
     }
 

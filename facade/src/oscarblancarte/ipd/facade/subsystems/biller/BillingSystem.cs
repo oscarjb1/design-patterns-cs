@@ -8,17 +8,16 @@ using System;
 namespace oscarblancarte.ipd.facade.subsystems.biller{
     public class BillingSystem {
 
-        public double queryCustomerBalance(Int64 customerId) {
+        public double QueryCustomerBalance(Int64 customerId) {
             Customer customer = OnMemoryDataBase.findCustomerById(customerId);
-            return customer.getBalance();
+            return customer.Balance;
         }
 
-        public double pay(BillingPayRequest billingPay) {
-            Customer customer = OnMemoryDataBase.findCustomerById(billingPay.getCustomerId());
-            customer.setBalance(customer.getBalance() - billingPay.getAmount());
-            Console.WriteLine("Payment applied to the client '"+customer.getName()+"', "
-                    + "the new balance is '"+customer.getBalance()+"'");
-            return customer.getBalance();//new Balance.
+        public double Pay(BillingPayRequest billingPay) {
+            Customer customer = OnMemoryDataBase.findCustomerById(billingPay.CustomerId);
+            customer.Balance = customer.Balance - billingPay.Amount;
+            Console.WriteLine("Payment applied to the client '"+customer.Name+"', " + "the new balance is '"+customer.Balance+"'");
+            return customer.Balance;//new Balance.
         }
     }
 }

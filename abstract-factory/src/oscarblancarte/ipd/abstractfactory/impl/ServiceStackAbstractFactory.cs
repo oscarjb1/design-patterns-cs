@@ -1,7 +1,7 @@
 using oscarblancarte.ipd.abstractfactory.util;
 using System.Configuration;
 using System;
-using System.Collections.Specialized;
+using System.Collections.Generic;
 
 namespace oscarblancarte.ipd.abstractfactory.impl
 {
@@ -9,10 +9,10 @@ namespace oscarblancarte.ipd.abstractfactory.impl
     {
         public ServiceStackAbstractFactory() { }
 
-        public static IServiceStackAbstractFactory createServiceFactory()
+        public static IServiceStackAbstractFactory CreateServiceFactory()
         {
-            NameValueCollection props = PropertiesUtil.loadProperty();
-            string factoryClass = ConfigurationManager.AppSettings["serviceProductImplClass"].ToString();
+            IDictionary<string,string> props = PropertiesUtil.LoadProperty("./AbstractFactoryConfiguration.properties");
+            string factoryClass = props["serviceProductImplClass"].ToString();
             Type type = Type.GetType(factoryClass);
             Console.WriteLine("factoryClass ==> " + factoryClass);
             try

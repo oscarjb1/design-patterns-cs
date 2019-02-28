@@ -4,7 +4,7 @@
  */
 namespace oscarblancarte.ipd.objectpool.impl.poolable{
     public interface IPooledObject {
-        bool validate();
+        bool Validate();
         void Invalidate();
     }
 } 

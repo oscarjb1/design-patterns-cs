@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\mediator2\\mediator2.csproj",
+      "projectUniqueName": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\mediator\\mediator2.csproj",
       "projectName": "mediator2",
-      "projectPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\mediator2\\mediator2.csproj",
+      "projectPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\mediator\\mediator2.csproj",
       "packagesPath": "C:\\Users\\Oscar\\.nuget\\packages\\",
-      "outputPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\mediator2\\obj\\",
+      "outputPath": "C:\\Desarrollo\\pattern-book-github\\design-patterns-cs\\mediator\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -51,7 +51,7 @@ namespace oscarblancarte.ipd.visitor.domain{
         }
 
         public void accept(IVisitor visitor) {
-            visitor.activitie(this);
+            visitor.Activitie(this);
         }
         
 	}

@@ -6,26 +6,26 @@ namespace oscarblancarte.ipd.command.impl{
 
         public static readonly string COMMAND_NAME = "dir";
 
-        public override string getCommandName() {
+        public override string GetCommandName() {
             return COMMAND_NAME;
         }
 
-        public override void execute(string[] args, StreamWriter output) {
+        public override void Execute(string[] args, StreamWriter output) {
             if (args == null || args.Length < 2) {
-                write(output, COMMAND_NAME + " insufficient arguments");
+                Write(output, COMMAND_NAME + " insufficient arguments");
             }
 
             string operation = args[0];
             if ("-D".Equals(operation.ToUpper())) {
-                write(output, deleteDir(args[1]));
+                Write(output, DeleteDir(args[1]));
             } else if ("-N".Equals(operation.ToUpper())) {
-                write(output, newDir(args[1]));
+                Write(output, NewDir(args[1]));
             } else {
-                write(output, "Invalid argument {-d | -n}");
+                Write(output, "Invalid argument {-d | -n}");
             }
         }
 
-        private string deleteDir(string url) {
+        private string DeleteDir(string url) {
             try {
                 
                 FileAttributes attr = File.GetAttributes(url);
@@ -41,7 +41,7 @@ namespace oscarblancarte.ipd.command.impl{
 
         }
 
-        private string newDir(string url) {
+        private string NewDir(string url) {
             try {
                 if (File.Exists(url)) {
                     return "File not found";

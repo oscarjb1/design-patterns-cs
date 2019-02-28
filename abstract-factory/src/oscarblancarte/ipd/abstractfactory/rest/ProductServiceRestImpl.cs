@@ -11,7 +11,7 @@ namespace oscarblancarte.ipd.abstractfactory.rest{
     public class ProductServiceRestImpl : IProductsService{
         private static readonly string[] PRODUCTS = new string[]{"keyboard","Mouse","Display"};
 
-        public string[] getProducts() {
+        public string[] GetProducts() {
             Console.WriteLine("RestFul");
             return PRODUCTS;
         }

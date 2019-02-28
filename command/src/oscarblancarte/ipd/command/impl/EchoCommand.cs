@@ -6,12 +6,12 @@ namespace oscarblancarte.ipd.command.impl{
 
         public static readonly string COMMAN_NAME = "echo";
 
-        public override void execute(string[] args, StreamWriter output) {
-            string message = getCommandName() + " " + string.Join(" ", args);
-            write(output, message);
+        public override void Execute(string[] args, StreamWriter output) {
+            string message = GetCommandName() + " " + string.Join(" ", args);
+            Write(output, message);
         }
 
-        public override string getCommandName() {
+        public override string GetCommandName() {
             return COMMAN_NAME;
         }
     }

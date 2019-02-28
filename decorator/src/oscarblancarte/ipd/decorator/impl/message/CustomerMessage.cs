@@ -8,56 +8,32 @@ using System;
 namespace oscarblancarte.ipd.decorator.impl.message{
     public class CustomerMessage : IMessage {
 
-        private string name;
-        private string email;
-        private string telephone;
+        public string Name{get; set;}
+        public string Email{get; set;}
+        public string Telephone{get; set;}
 
         public CustomerMessage() {
         }
 
         public CustomerMessage(string name, string email, string telephone) {
-            this.name = name;
-            this.email = email;
-            this.telephone = telephone;
+            this.Name = name;
+            this.Email = email;
+            this.Telephone = telephone;
         }
 
-        public string getName() {
-            return name;
-        }
-
-        public void setName(string name) {
-            this.name = name;
-        }
-
-        public string getEmail() {
-            return email;
-        }
-
-        public void setEmail(string email) {
-            this.email = email;
-        }
-
-        public string getTelephone() {
-            return telephone;
-        }
-
-        public void setTelephone(string telephone) {
-            this.telephone = telephone;
-        }
-
-        public IMessage processMessage() {
+        public IMessage ProcessMessage() {
             return this;
         }
 
-        public string getContent() {
+        public string GetContent() {
             return ToString();
         }
 
         public override string ToString() {
-            return "CustomerMessage{" + "name=" + name + ", \nemail=" + email + ", telephone=" + telephone + '}';
+            return "CustomerMessage{" + "name=" + Name + ", \nemail=" + Email + ", telephone=" + Telephone + '}';
         }
 
-        public void setContent(string content) {
+        public void SetContent(string content) {
             throw new NotSupportedException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }

@@ -10,7 +10,7 @@ using System;
 
         private static readonly string[] EMPLOYEES = new string[]{"Maria", "Rebeca", "Liliana"};
 
-        public string[] getEmployee() {
+        public string[] GetEmployee() {
             Console.WriteLine("WebServices");
             return EMPLOYEES;
         }

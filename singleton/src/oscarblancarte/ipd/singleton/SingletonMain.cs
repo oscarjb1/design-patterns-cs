@@ -5,16 +5,16 @@ namespace oscarblancarte.ipd.singleton{
 
         static void Main(string[] args) {
             //Modul 1
-            ConfigurationSingleton singletonA = ConfigurationSingleton.getInstance();
+            ConfigurationSingleton singletonA = ConfigurationSingleton.GetInstance();
             //Modul 2
-            ConfigurationSingleton singletonB = ConfigurationSingleton.getInstance();
+            ConfigurationSingleton singletonB = ConfigurationSingleton.GetInstance();
             
             Console.WriteLine(singletonA);
             Console.WriteLine(singletonB);
             Console.WriteLine("Same reference ==> " + (singletonA == singletonB));
             
-            singletonA.setAppName("Singleton Pattern");
-            singletonB.setAppVersion("1.0x");
+            singletonA.AppName = "Singleton Pattern";
+            singletonB.AppVersion = "1.0x";
             
             Console.WriteLine("SingletonA ==> " + singletonA);
             Console.WriteLine("SingletonB ==> " + singletonB);
@@ -22,7 +22,7 @@ namespace oscarblancarte.ipd.singleton{
             singletonA = null;
             singletonB = null;
             
-            singletonA = ConfigurationSingleton.getInstance();
+            singletonA = ConfigurationSingleton.GetInstance();
             Console.WriteLine("singletonA ==> " + singletonA);
         }
     }

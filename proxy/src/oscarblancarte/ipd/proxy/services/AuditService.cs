@@ -6,7 +6,7 @@ using System;
  */
 namespace oscarblancarte.ipd.proxy.services{
     public class AuditService {
-        public void auditServiceUsed(string user, string service){
+        public void AuditServiceUsed(string user, string service){
             Console.WriteLine(user + " used the service > " + service + ", at " + DateTime.Now.ToString("yyyyMMddHHmmss"));
         }
     }

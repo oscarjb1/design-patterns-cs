@@ -19,13 +19,13 @@ namespace oscarblancarte.ipd.bridge{
             
             try {
                 string message = "<Person><Name>Oscar Blancarte</Name></Person>";
-                string messageAES = aesImpl.encryptMessage(message, "HG58YZ3CR9123456");
+                string messageAES = aesImpl.EncryptMessage(message, "HG58YZ3CR9123456");
                 Console.WriteLine("messageAES > " + messageAES + "\n");
                 
-                string messageDES = desImpl.encryptMessage(message, "XMzDdG4D03CKm2Ix");
+                string messageDES = desImpl.EncryptMessage(message, "XMzDdG4D03CKm2Ix");
                 Console.WriteLine("messageDES > " + messageDES + "\n");
                 
-                string messageNO = noImpl.encryptMessage(message, null);
+                string messageNO = noImpl.EncryptMessage(message, null);
                 Console.WriteLine("messageNO > " + messageNO + "\n");
             } catch (Exception e) {
                 Console.WriteLine(e.ToString());

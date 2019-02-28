@@ -21,13 +21,13 @@ namespace oscarblancarte.ipd.decorator.impl.decorators{
             
         }
 
-        public override IMessage processMessage() {
-            message = message.processMessage();
-            message = xmlMessage();
-            return message;
+        public override IMessage ProcessMessage() {
+            Message = Message.ProcessMessage();
+            Message = XmlMessage();
+            return Message;
         }
 
-        private IMessage xmlMessage() {
+        private IMessage XmlMessage() {
             try {
                 //JAXBContext jc = JAXBContext.newInstance(message.getClass());
                 //JAXBElement<IMessage> je2 = new JAXBElement<IMessage>(new QName(message.getClass().getName()), (Class<IMessage>) message.getClass(), message);
@@ -37,11 +37,11 @@ namespace oscarblancarte.ipd.decorator.impl.decorators{
                 //marshaller.marshal(je2, output);
                 //return new TextMessage(new String(output.toByteArray()));
                 
-                XmlSerializer xmlSerializer = new XmlSerializer(message.GetType());  
+                XmlSerializer xmlSerializer = new XmlSerializer(Message.GetType());  
                 
                 using(StringWriter textWriter = new StringWriter())
                 {
-                    xmlSerializer.Serialize(textWriter, message);
+                    xmlSerializer.Serialize(textWriter, Message);
                     return new TextMessage(textWriter.ToString());
                 }
 

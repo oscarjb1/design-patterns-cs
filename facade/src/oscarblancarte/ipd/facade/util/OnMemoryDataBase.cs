@@ -27,16 +27,14 @@ namespace oscarblancarte.ipd.facade.util{
 
         public static void changeCustomerStatus(Int64 id, string newStatus) {
             Customer customer = findCustomerById(id);
-            customer.setStatus(newStatus);
-            Console.WriteLine("Change of client status '" + customer.getName()
-                    + "'" + newStatus);
+            customer.Status = newStatus;
+            Console.WriteLine("Change of client status '" + customer.Name + "'" + newStatus);
         }
 
         public static bool validateCardBins(string creditCardPrefix) {
             if (CARD_BINS.ContainsKey(creditCardPrefix)) {
-                string company = CARD_BINS[creditCardPrefix].getCompany();
-                Console.WriteLine("Valid card > '" + creditCardPrefix + "', "
-                        + company + "\n");
+                string company = CARD_BINS[creditCardPrefix].Company;
+                Console.WriteLine("Valid card > '" + creditCardPrefix + "', " + company + "\n");
                 return true;
             } else {
                 Console.WriteLine("Invalid card >\n");
@@ -46,7 +44,7 @@ namespace oscarblancarte.ipd.facade.util{
 
         public static string getCardCompany(string creditCardPrefix) {
             if (CARD_BINS.ContainsKey(creditCardPrefix)) {
-                return CARD_BINS[creditCardPrefix].getCompany();
+                return CARD_BINS[creditCardPrefix].Company;
             }
             throw new SystemException("Card does not exist");
         }

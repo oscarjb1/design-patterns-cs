@@ -7,13 +7,13 @@ using oscarblancarte.ipd.chainofresponsability.domain.order;
 namespace oscarblancarte.ipd.chainofresponsability.validator{
     public class SalesOrderValidator : AbstractOrderValidator {
 
-        public override void validate(AbstractOrder order)  {
+        public override void Validate(AbstractOrder order)  {
             if (!(order.GetType() == typeof(SalesOrder))) {
                 throw new ValidationException("A sales order was expected");
             }
 
-            foreach(AbstractOrderValidator validator in validators){
-                validator.validate(order);
+            foreach(AbstractOrderValidator validator in Validators){
+                validator.Validate(order);
             }
         }
     }

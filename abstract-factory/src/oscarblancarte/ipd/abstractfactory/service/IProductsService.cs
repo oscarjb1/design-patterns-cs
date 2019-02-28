@@ -6,7 +6,7 @@ using System;
  */
 namespace oscarblancarte.ipd.abstractfactory.service{
     public interface IProductsService {
-        string[] getProducts();
+        string[] GetProducts();
     }
 }
 

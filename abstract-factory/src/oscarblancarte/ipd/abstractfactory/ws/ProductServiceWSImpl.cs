@@ -10,7 +10,7 @@ namespace oscarblancarte.ipd.abstractfactory.ws{
 
         private static readonly string[] PRODUCTS = new string[]{"Soda", "Juice", "Fruit"};
 
-        public string[] getProducts() {
+        public string[] GetProducts() {
             Console.WriteLine("WebServices");
             return PRODUCTS;
         }

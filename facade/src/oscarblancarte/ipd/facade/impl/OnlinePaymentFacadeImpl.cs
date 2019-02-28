@@ -13,39 +13,39 @@ using System;
 namespace oscarblancarte.ipd.facade.impl{
     public class OnlinePaymentFacadeImpl : IPaymentFacade {
 
-        private static readonly CRMSystem crmSystem = new CRMSystem();
-        private static readonly BillingSystem billingSyste = new BillingSystem();
-        private static readonly BankSystem bankSyste = new BankSystem();
-        private static readonly EmailSystem emailSenderSystem = new EmailSystem();
+        private static readonly CRMSystem CrmSystem = new CRMSystem();
+        private static readonly BillingSystem BillingSyste = new BillingSystem();
+        private static readonly BankSystem BankSyste = new BankSystem();
+        private static readonly EmailSystem EmailSenderSystem = new EmailSystem();
         
         
-        public PaymentResponse pay(PaymentRequest request)  {
-            Customer customer = crmSystem.findCustomer(request.getCustomerId());
+        public PaymentResponse Pay(PaymentRequest request)  {
+            Customer customer = CrmSystem.FindCustomer(request.CustomerId);
             //Validate Set
             if(customer==null){
-                throw new GeneralPaymentError("Customer ID does not exist '" +request.getCustomerId()+"' not exist.");
-            }else if("Inactive".Equals(customer.getStatus()) ){
-                throw new GeneralPaymentError("Customer ID does not exist '" +request.getCustomerId()+"' is inactive.");
-            }else if(request.getAmmount() > billingSyste.queryCustomerBalance(customer.getId())){
+                throw new GeneralPaymentError("Customer ID does not exist '" +request.CustomerId+"' not exist.");
+            }else if("Inactive".Equals(customer.Status) ){
+                throw new GeneralPaymentError("Customer ID does not exist '" +request.CustomerId+"' is inactive.");
+            }else if(request.Ammount > BillingSyste.QueryCustomerBalance(customer.Id )){
                 throw new GeneralPaymentError("You are trying to make a payment " + "\n\tgreater than the customer's balance");
             }
             
             //charge to the card
             TransferRequest transfer = new TransferRequest(
-                    request.getAmmount(),request.getCardNumber(), 
-                    request.getCardName(), request.getCardExpDate(), 
-                    request.getCardNumber());
-            string payReference = bankSyste.transfer(transfer);
+                    request.Ammount,request.CardNumber, 
+                    request.CardName, request.CardExpDate, 
+                    request.CardNumber);
+            string payReference = BankSyste.Transfer(transfer);
             
             //Impact of the balance in the billing system
             BillingPayRequest billingRequest = new BillingPayRequest(
-                    request.getCustomerId(), request.getAmmount());
-            double newBalance = billingSyste.pay(billingRequest);
+                    request.CustomerId, request.Ammount);
+            double newBalance = BillingSyste.Pay(billingRequest);
             
             //The client is reactivated if the new balance is less than $ 51
-            string newStatus = customer.getStatus();
+            string newStatus = customer.Status;
             if(newBalance<=50){
-                OnMemoryDataBase.changeCustomerStatus(request.getCustomerId(), "Active");
+                OnMemoryDataBase.changeCustomerStatus(request.CustomerId, "Active");
                 newStatus = "Active";
             }
             
@@ -53,15 +53,15 @@ namespace oscarblancarte.ipd.facade.impl{
             Dictionary<string, string> parameters = new Dictionary<string, string>();
 
             
-            parameters.Add("$name", customer.getName());
-            parameters.Add("$ammount", request.getAmmount()+"");
+            parameters.Add("$name", customer.Name);
+            parameters.Add("$ammount", request.Ammount+"");
             parameters.Add("$newBalance", newBalance+"");
-            string number = request.getCardNumber();
+            string number = request.CardNumber;
             string subfix = number.Substring(number.Length-4, 4);
             parameters.Add("$cardNumber", subfix);
             parameters.Add("$reference", payReference);
             parameters.Add("$newStatus", newStatus);
-            emailSenderSystem.sendEmail(parameters);
+            EmailSenderSystem.SendEmail(parameters);
             
             return new PaymentResponse(payReference, newBalance, newStatus);
             

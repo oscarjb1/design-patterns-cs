@@ -4,27 +4,8 @@
  */
 namespace oscarblancarte.ipd.chainofresponsability.domain{
 public class CreditData {
+        public double CreditLimit{get; set;}
+        public double Balance{get; set;}
 
-    private double creditLimit;
-    private double balance;
-
-    public double getCreditLimit() {
-        return creditLimit;
-    }
-
-    public void setCreditLimit(double creditLimit) {
-        this.creditLimit = creditLimit;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
     }
 }
-
-}
-
-

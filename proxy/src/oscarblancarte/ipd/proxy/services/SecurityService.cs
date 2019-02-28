@@ -7,7 +7,7 @@ using System;
 
 namespace oscarblancarte.ipd.proxy.services{
     public class SecurityService {
-        public bool authorization(string user,string password){
+        public bool Authorization(string user,string password){
             if(user.Equals("oblancarte") && password.Equals("1234")){
                 Console.WriteLine("User " + user + " authorized");
                 return true;
